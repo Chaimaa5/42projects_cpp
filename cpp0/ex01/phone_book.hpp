@@ -1,6 +1,6 @@
 #ifndef PHONE_BOOK_HPP
 #define PHONE_BOOK_HPP
-#include <string>
+#include <string.h>
 #include <iostream>
 
 class PhoneBook{
@@ -9,7 +9,7 @@ class PhoneBook{
 
 class Contact{
     int     id;
-    string name;
+    char name;
     int     number;
 };
 #endif
