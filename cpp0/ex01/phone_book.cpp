@@ -9,5 +9,9 @@ int main()
     std::cin >> msg;
     if (!strcmp(msg, "EXIT"))
         std::cout << "bye" << std::endl;
+    else if (!strcmp(msg, "ADD"))
+    {
+        
+    }
     return (0);
 }
