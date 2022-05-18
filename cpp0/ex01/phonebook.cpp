@@ -14,7 +14,9 @@ int main()
     }
     else if (!strcmp(msg, "SEARCH"))
     {
-
+        std::cout << "Please enter id of contact:" << std::endl;
+        std::cin >> msg;
+        
     }
     else
         std::cout << "Sorry we didn't recognize your request!" << std::endl;
