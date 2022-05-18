@@ -1,7 +1,7 @@
-NAME = phone_book
+NAME = phonebook
 CC = g++
 FLAGS = -Wall -Werror -Wextra
-SRC = phone_book.cpp
+SRC = phonebook.cpp
 
 all: $(NAME)
 
