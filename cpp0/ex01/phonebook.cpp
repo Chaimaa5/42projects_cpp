@@ -1,6 +1,5 @@
 #include "phonebook.hpp"
 
-// 
 int main()
 {
     char msg[512];
@@ -13,5 +12,11 @@ int main()
     {
         
     }
+    else if (!strcmp(msg, "SEARCH"))
+    {
+
+    }
+    else
+        std::cout << "Sorry we didn't recognize your request!" << std::endl;
     return (0);
 }
