@@ -3,6 +3,7 @@
 int main()
 {
     char msg[512];
+    Contact contact;
 
     std::cout << "Please enter your request ADD, SEARCH or EXIT:" << std::endl;
     std::cin >> msg;
