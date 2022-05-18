@@ -9,3 +9,8 @@ Contact::~Contact(void)
 {
     return;
 }
+
+Contact::print(id)
+{
+
+}
