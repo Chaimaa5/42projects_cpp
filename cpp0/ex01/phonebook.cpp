@@ -10,7 +10,12 @@ int main()
         std::cout << "bye" << std::endl;
     else if (!strcmp(msg, "ADD"))
     {
-        
+        std::cout << "Please enter contact's name:" << std::endl;
+        std::cin >> contact.name;
+         std::cout << "Please enter contact's name:" << std::endl;
+        std::cin >> contact.age;
+         std::cout << "Please enter contact's name:" << std::endl;
+        std::cin >> contact.phone;
     }
     else if (!strcmp(msg, "SEARCH"))
     {
