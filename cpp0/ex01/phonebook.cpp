@@ -5,11 +5,6 @@ int main()
     char msg[512];
     Contact contact;
 
-    // contact.name = "Chama";
-    // contact.age = 21;
-    //  std::cout << contact.name << std::endl;
-    //  std::cout << contact.age << std::endl;
-
     std::cout << "Please enter your request ADD, SEARCH or EXIT:" << std::endl;
     std::cin >> msg;
     if (!strcmp(msg, "EXIT"))
