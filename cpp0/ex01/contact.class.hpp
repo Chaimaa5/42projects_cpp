@@ -4,15 +4,15 @@
 #include <string.h>
 
 class Contact{
-
+public:
     int     id;
-    char    name[50];
+    std::string  name;
     int     age;
     int     phone;
     
     //Constructors
-    Contact(void);
-    ~Contact(void);
+    Contact(void){};
+    ~Contact(void){};
 
     //functions
     void    print(void);
