@@ -7,3 +7,4 @@ all: $(NAME)
 
 fclean: 
 	rm -f $(NAME)
+re: fclean all

@@ -20,14 +20,15 @@ int main(int argc, char **argv)
     {
         while (i < argc)
         {
+            j = 0;
             while (argv[i][j])
             {
                 std::cout << upper(argv[i][j]) ;
                 j++;
             }
-            std::cout << "\n";
             i++;
         }
+        std::cout << "\n";
     }
     return (0);
 }
