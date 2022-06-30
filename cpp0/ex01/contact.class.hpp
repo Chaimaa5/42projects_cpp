@@ -15,6 +15,6 @@ public:
     ~Contact(void){};
 
     //functions
-    void    print(void);
+    void    print(int id);
 };
 #endif

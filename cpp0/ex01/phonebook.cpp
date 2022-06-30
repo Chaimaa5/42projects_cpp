@@ -22,7 +22,7 @@ int main()
     {
         std::cout << "Please enter id of contact:" << std::endl;
         std::cin >> msg;
-        
+        contact.print(atoi(msg));
     }
     else
         std::cout << "Sorry we didn't recognize your request!" << std::endl;

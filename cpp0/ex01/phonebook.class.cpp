@@ -1,5 +1,6 @@
 #include "phonebook.class.hpp"
 
+//Default Constructor
 Phonebook::Phonebook(void)
 {
     return;
