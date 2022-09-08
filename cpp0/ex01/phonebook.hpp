@@ -4,6 +4,6 @@
 #include <cstdlib>
 #include <iostream>
 #include "phonebook.class.hpp"
-#include "contact.class.hpp"
+#include "contact.hpp"
 
 #endif

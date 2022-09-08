@@ -10,46 +10,97 @@ void    make_a_choice(void)
 
 void    program_exit(void)
 {
-    std::cout << "See you next time" << std::endl;
+    std::cout << "Thank you for using PhoneBook!" << std::endl;
     return ;
 }
 
-void    add_contact(Contact contact)
+int    check_phone(int phone)
 {
-        std::cout << "Please enter contact's name:" << std::endl;
-        std::cin >> contact.name;
-        std::cout << "Please enter contact's age:" << std::endl;
-        std::cin >> contact.age;
-        std::cout << "Please enter contact's phone number:" << std::endl;
-        std::cin >> contact.phone;
-        std::cout << "Contact added successfuly!" << std::endl;
+    if (isdigit(phone))
+    {
+        std::cout << "The phone number should be in digits";
+        return (1);
+    }
+    return (0);
 }
 
-void    search_contact(char *msg)
-{
-    std::cout << "Please enter id of contact:" << std::endl;
-    std::cin >> msg;
-    // Search Function
-    std::cout << "Contact Details " << std::endl;
-	std::cout << "Name: " << std::endl;
-	std::cout << "Age:  " << std::endl;
-	std::cout << "Phone number:  " << std::endl;  
-}
+
+// void    find_contact_id(int	id)
+// {
+// 	while (contact[i])
+// 	{
+// 		if (i == id)
+// 			print_contact(id);
+// 		i++;
+// 	}
+// }
 
 int main()
 {
-    char msg[512];
-    Contact contact;
+    char		msg[512];
+    Phonebook	phonebook;
+	int 		i = 0;
+	int			id;
 
+	while (1)
+	{
     make_a_choice();
     std::cin >> msg;
     if (!strcmp(msg, "EXIT") || !strcmp(msg, "3"))
         program_exit();
     else if (!strcmp(msg, "ADD") || !strcmp(msg, "1"))
-        add_contact(contact);
+	{
+		std::cout << "Please enter contact's name: ";
+        std::cin >> phonebook.contact[i].name;
+        std::cout << "Please enter contact's age: ";
+        std::cin >> phonebook.contact[i].age;
+		if (isdigit(phonebook.contact[i].age))
+			std::cout << "Age should be a digit" << std::endl;
+        std::cout << "Please enter contact's phone number: ";
+        std::cin >> phonebook.contact[i].phone;
+		if (check_phone(phonebook.contact[i].phone))
+		{
+			std::cout << "Please enter contact's phone number: ";
+        	std::cin >> phonebook.contact[i].phone;
+		}
+		else
+		{
+        	std::cout << "Contact added successfuly!";
+			i++;
+		}
+	}
     else if (!strcmp(msg, "SEARCH") || !strcmp(msg, "2"))
-        search_contact(msg);
+	{
+		if (phonebook.contact[0].age)
+		{
+			std::cout << "Contact Details "<< std::endl;
+			for (size_t j = 0; j <= 7; j++)
+			{
+				if (phonebook.contact[j].age)
+				{
+					std::cout << "  " << phonebook.contact[j].id;
+					std::cout << "  " << phonebook.contact[j].name;
+					std::cout << "  " << phonebook.contact[j].age << std::endl;
+				}
+			}
+			std::cout << "Please enter id of contact:" << std::endl;
+    		std::cin >> msg;
+			id = atoi(msg);
+			if (isdigit(id))
+				std::cout << "id should be a digit from 1 to 8" << std::endl;
+			else
+			{
+    			std::cout << "Contact Details " << std::endl;
+				std::cout << "Name: " << std::endl;
+				std::cout << "Age:  " << std::endl;
+				std::cout << "Phone number:  " << std::endl;  
+			}
+		}
+		else
+			std::cout << "No records on the Phonebook";
+	}
     else
         std::cout << "Sorry we didn't recognize your request!" << std::endl;
+	}
     return (0);
 }

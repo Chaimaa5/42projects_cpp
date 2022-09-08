@@ -1,9 +1,10 @@
 #ifndef PHONEBOOK_CLASS_HPP
 #define PHONEBOOK_CLASS_HPP
 #include "phonebook.hpp"
+#include "contact.hpp"
 
 class Phonebook{
-    // Contact contact[7];
+    public: Contact contact[7];
 
 };
 #endif

@@ -9,7 +9,7 @@ Contact::~Contact(void)
 {
     return;
 }
-//print contact after id search
+
 // Contact::print(void)
 // {   
 //     std::cout << "Contact Details " << std::endl;
