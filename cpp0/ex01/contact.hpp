@@ -5,16 +5,11 @@
 
 class Contact{
 public:
-    int     id;
+    int         id;
     std::string  name;
-    int     age;
+    int             age;
     int     phone;
     
-    //Constructors
-    Contact(void){};
-    ~Contact(void){};
-
-    //functions
     void    print(void);
 };
 #endif
