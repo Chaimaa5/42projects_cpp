@@ -108,6 +108,20 @@ std::string	Contact::getsecret()
 	return(secret);
 }
 
+std::string Phonebook::trim(std::string str)
+{
+	std::string strr;
+
+	if (str.length() > 10)
+	{
+		strr = str.erase(9, str.length());
+		strr += '.';
+	}
+	else
+		strr = str;
+	return (strr);
+}
+
 int main()
 {
     Phonebook	phonebook;
@@ -153,34 +167,39 @@ int main()
 			if (i > 0)
 			{
 				x = 0;
-				std::cout << "Contact Details "<< std::endl;
+				std::cout << "-----Contact Details-----"<< std::endl;
 				while (x < i)
 				{
-						std::cout << std::setw(10) << x;
-						std::cout << "|" <<  std::setw(10) << phonebook.contact[x].getfirstname();
-						std::cout << "|" <<  std::setw(10) << phonebook.contact[x].getlastname();
-						std::cout << "|" <<  std::setw(10) << phonebook.contact[x].getnickname() << std::endl;
-						x++;
+					std::cout << std::left << std::setw(10) << x;
+					std::cout << "|" << std::left << std::setw(10) << phonebook.trim(phonebook.contact[x].getfirstname());
+					std::cout << "|" << std::left <<  std::setw(10) << phonebook.trim(phonebook.contact[x].getlastname());
+					std::cout << "|" << std::left <<  std::setw(10) << phonebook.trim(phonebook.contact[x].getnickname()) << std::endl;
+					x++;
 				}
 				std::cout << "Please enter id of contact:" << std::endl;
     			std::cin >> str;
-				while (isdigit(id) || str.length() > 1)
+				while (!isdigit(id))
 				{
 					std::cout << "id should be a digit from 0 to 7, ";
 					std::cout << "Please enter id of contact:";
     				std::cin >> str;
+					if (str.length() == 1 && (str[0] >= '0' && str[0] <= '9'))
+					{
+						id = stoi(str);
+						if (id < x)
+							break;
+					}
 				}
-				id = stoi(str);
     			std::cout << "Contact Details " << std::endl;
 				std::cout << "First Name: " <<  phonebook.contact[id].getfirstname() << std::endl;
 				std::cout << "Last Name:  " <<  phonebook.contact[id].getlastname() << std::endl;
 				std::cout << "Nickname:  " <<  phonebook.contact[id].getnickname() << std::endl;
 				std::cout << "Phone number:  " << phonebook.contact[id].getphone() << std::endl; 
 				std::cout << "Dark secret:  " << phonebook.contact[id].getsecret() << std::endl;  
-
+				
 			}
 			else
-				std::cout << "No records on the Phonebook";
+				std::cout << "No records on the Phonebook" << std::endl;
 		}	
     	else
     	    std::cout << "Sorry we didn't recognize your request!" << std::endl;

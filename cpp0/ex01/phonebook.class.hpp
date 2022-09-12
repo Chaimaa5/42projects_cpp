@@ -5,6 +5,6 @@
 
 class Phonebook{
     public: Contact contact[7];
-
+    std::string trim(std::string str);
 };
 #endif
