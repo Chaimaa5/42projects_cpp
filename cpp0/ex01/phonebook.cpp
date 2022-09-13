@@ -1,5 +1,4 @@
 #include "phonebook.hpp"
-#include <iomanip>
 
 void    make_a_choice(void) 
 {
@@ -33,104 +32,16 @@ int    check_phone(std::string phone)
 }
 
 
-// void    find_contact_id(int	id)
-// {
-// 	while (contact[i])
-// 	{
-// 		if (i == id)
-// 			print_contact(id);
-// 		i++;
-// 	}
-// }
-
-void	Contact::setfirstname(std::string str)
-{
-	firstname = str;
-}
-
-
-std::string	Contact::getfirstname()
-{
-	return(firstname);
-}
-void	Contact::setnickname(std::string str)
-{
-	nickname = str;
-}
-
-
-std::string	Contact::getnickname()
-{
-	return(nickname);
-}
-
-
-void	Contact::setlastname(std::string str)
-{
-	lastname = str;
-}
-
-
-std::string	Contact::getlastname()
-{
-	return(lastname);
-}
-
-void	Contact::setphone(std::string str)
-{
-	phone = stoi(str);
-}
-
-
-int	Contact::getphone()
-{
-	return(phone);
-}
-
-void	Contact::setid(int str)
-{
-	phone = str;
-}
-
-
-int	Contact::getid()
-{
-	return(id);
-}
-void	Contact::setsecret(std::string str)
-{
-	secret = str;
-}
-
-
-std::string	Contact::getsecret()
-{
-	return(secret);
-}
-
-std::string Phonebook::trim(std::string str)
-{
-	std::string strr;
-
-	if (str.length() > 10)
-	{
-		strr = str.erase(9, str.length());
-		strr += '.';
-	}
-	else
-		strr = str;
-	return (strr);
-}
-
 int main()
 {
     Phonebook	phonebook;
 	int 		i = 0;
 	int 		x = 0;
+	int			j = 0;
 	int id;
 	std::string str;
 
-	while (str != "3")
+	while (str != "3" && str != "EXIT")
 	{
 		make_a_choice();
     	std::cin >> str;
@@ -138,7 +49,6 @@ int main()
     	    program_exit();
     	else if (str == "ADD" || str == "1")
 		{
-			phonebook.contact[i].setid(i);
 			std::cout << "Please enter contact's first name: ";
     	    std::cin >> str;
 			phonebook.contact[i].setfirstname(str);
@@ -161,24 +71,32 @@ int main()
 			phonebook.contact[i].setsecret(str);
 			std::cout << "Contact added successfuly!" << std::endl;
 			i++;
+			if(j < 8)
+				j++;
+			if (i > 7)
+				i = 0;
 		}
     	else if (str == "SEARCH" || str == "2")
 		{
-			if (i > 0)
+			if (j > 0)
 			{
 				x = 0;
-				std::cout << "-----Contact Details-----"<< std::endl;
-				while (x < i)
+				std::cout << "--------------- PHONEBOOK ----------------"<< std::endl;
+				std::cout << std::left << std::setw(10) << "id"
+				<< "|" << std::left << std::setw(10) << "First name"
+				<< "|" << std::left <<  std::setw(10) << "Last name"
+				<< "|" << std::left <<  std::setw(10) << "Nick name\n" << std::endl;
+				while (x < j)
 				{
 					std::cout << std::left << std::setw(10) << x;
 					std::cout << "|" << std::left << std::setw(10) << phonebook.trim(phonebook.contact[x].getfirstname());
 					std::cout << "|" << std::left <<  std::setw(10) << phonebook.trim(phonebook.contact[x].getlastname());
-					std::cout << "|" << std::left <<  std::setw(10) << phonebook.trim(phonebook.contact[x].getnickname()) << std::endl;
+					std::cout << "|" << std::left <<  std::setw(10) << phonebook.trim(phonebook.contact[x].getnickname()) << "|" << std::endl;
 					x++;
 				}
-				std::cout << "Please enter id of contact:" << std::endl;
+				std::cout << "Please enter id of contact:";
     			std::cin >> str;
-				while (!isdigit(id))
+				while (str.length() > 1 || !isdigit(str[0]) || x - 1 < stoi(str))
 				{
 					std::cout << "id should be a digit from 0 to 7, ";
 					std::cout << "Please enter id of contact:";
@@ -190,13 +108,7 @@ int main()
 							break;
 					}
 				}
-    			std::cout << "Contact Details " << std::endl;
-				std::cout << "First Name: " <<  phonebook.contact[id].getfirstname() << std::endl;
-				std::cout << "Last Name:  " <<  phonebook.contact[id].getlastname() << std::endl;
-				std::cout << "Nickname:  " <<  phonebook.contact[id].getnickname() << std::endl;
-				std::cout << "Phone number:  " << phonebook.contact[id].getphone() << std::endl; 
-				std::cout << "Dark secret:  " << phonebook.contact[id].getsecret() << std::endl;  
-				
+    			phonebook.print(phonebook.contact[id]);
 			}
 			else
 				std::cout << "No records on the Phonebook" << std::endl;

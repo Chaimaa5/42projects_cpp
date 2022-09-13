@@ -1,19 +1,50 @@
-#include "contact.class.hpp"
+#include "phonebook.hpp"
 
-Contact::Contact(void)
+void	Contact::setfirstname(std::string str)
 {
-    return;
+	firstname = str;
 }
 
-Contact::~Contact(void)
+std::string	Contact::getfirstname()
 {
-    return;
+	return(firstname);
+}
+void	Contact::setnickname(std::string str)
+{
+	nickname = str;
 }
 
-// Contact::print(void)
-// {   
-//     std::cout << "Contact Details " << std::endl;
-// 	std::cout << "Name: " << std::endl;
-// 	std::cout << "Age:  " << std::endl;
-// 	std::cout << "Phone number:  " << std::endl;
-// }
+std::string	Contact::getnickname()
+{
+	return(nickname);
+}
+
+void	Contact::setlastname(std::string str)
+{
+	lastname = str;
+}
+
+std::string	Contact::getlastname()
+{
+	return(lastname);
+}
+
+void	Contact::setphone(std::string str)
+{
+	phone = str;
+}
+
+std::string	Contact::getphone()
+{
+	return(phone);
+}
+
+void	Contact::setsecret(std::string str)
+{
+	secret = str;
+}
+
+std::string	Contact::getsecret()
+{
+	return(secret);
+}
