@@ -6,11 +6,11 @@
 class Contact{
 private:
     int         id;
-    std::string  lastname;
+    std::string lastname;
     std::string secret;
     std::string firstname;
     std::string nickname;
-    std::string     phone;
+    std::string phone;
 public:
     void    print(void);
     

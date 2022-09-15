@@ -1,5 +1,5 @@
 #include "phonebook.hpp"
-
+#include <fstream>
 void    make_a_choice(void) 
 {
     std::cout << "Please enter your request ADD, SEARCH or EXIT:" << std::endl;
@@ -41,7 +41,7 @@ int main()
 	int id;
 	std::string str;
 
-	while (str != "3" && str != "EXIT")
+	while (str != "3" && str != "EXIT" && !std::cin.eof())
 	{
 		make_a_choice();
     	std::cin >> str;

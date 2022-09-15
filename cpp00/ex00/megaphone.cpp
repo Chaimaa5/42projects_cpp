@@ -1,16 +1,10 @@
 #include <iostream>
 
-char    upper(char c)
-{
-    if (c >= 97 && c <= 127)
-        return (c - 32);
-    else
-        return (c);
-}
 int main(int argc, char **argv)
 {
     int i;
     int j;
+    std::string s;
 
     i = 1;
     j = 0;
@@ -20,15 +14,16 @@ int main(int argc, char **argv)
     {
         while (i < argc)
         {
+            s = argv[i];
             j = 0;
-            while (argv[i][j])
+            while (s[j])
             {
-                std::cout << upper(argv[i][j]) ;
+                std::cout << (char)std::toupper(s[j]) ;
                 j++;
             }
+            std::cout << "\n";
             i++;
         }
-        std::cout << "\n";
     }
     return (0);
 }

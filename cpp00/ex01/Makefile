@@ -1,13 +1,11 @@
 NAME = phonebook
 CC = g++
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -std=c++98
 SRC = phonebook.cpp phonebook.class.cpp contact.class.cpp
-
 all: $(NAME)
-
 
 $(NAME):
 	$(CC) $(FLAGS) $(SRC) -o $(NAME)
-fclean:
+fclean: 
 	rm -f $(NAME)
 re: fclean all
