@@ -1,6 +1,6 @@
 NAME = harlFilter
-CC = clang++
-FLAGS = -Wall -Werror -Wextra
+CC = c++
+FLAGS = -Wall -Werror -Wextra -std=c++98
 SRC = main.cpp Harl.cpp
 
 all: $(NAME)
