@@ -2,10 +2,10 @@
 
 ClapTrap::ClapTrap()
 {
-    std::cout << "Default  constructor called" << std::endl;
+    std::cout << "ClapTrap Default  constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : name(name), hit_point(100), attack_point(20), energy_point(50)
+ClapTrap::ClapTrap(std::string name) : name(name), hit_point(10), attack_point(0), energy_point(10)
 {
     std::cout << "ClapTrap: "<< name << " constructed" << std::endl;
 }
@@ -17,9 +17,10 @@ ClapTrap::~ClapTrap()
 
 void    ClapTrap::attack(const std::string& target)
 {
-    if( this->energy_point > 0 || this->hit_point > 0)
+    if( this->energy_point > 0 || this->attack_point > 0)
     {
         this->energy_point -= 1;
+        this->attack_point -= 1;
         std::cout << "ClapTrap " << this->name << " attacks "<<  target << ", causing him damage" << std::endl;
     }
     else
