@@ -2,7 +2,7 @@
 
 ClapTrap::ClapTrap()
 {
-    std::cout << "Default  constructor called" << std::endl;
+    std::cout << "ClapTrap Default  constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : name(name), hit_point(10), attack_point(0), energy_point(10)
@@ -21,7 +21,7 @@ void    ClapTrap::attack(const std::string& target)
     {
         this->energy_point -= 1;
         this->attack_point -= 1;
-        std::cout << "ClapTrap " << this->name << " attacks "<<  target << ", causing him damage"  << std::endl;
+        std::cout << "ClapTrap " << this->name << " attacks "<<  target << ", causing him damage" << std::endl;
     }
     else
         std::cout << "ClapTrap " << this->name << " can't attack "<<  target << ", No energy points left! " << std::endl;

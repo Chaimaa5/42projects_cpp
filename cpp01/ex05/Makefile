@@ -1,7 +1,7 @@
 NAME = main
-CC = c++
-FLAGS = -Wall -Werror -Wextra -std=c++98
-SRC = main.cpp
+CC = clang++
+FLAGS = -Wall -Werror -Wextra
+SRC = main.cpp Harl.cpp
 
 all: $(NAME)
 

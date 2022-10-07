@@ -1,7 +1,16 @@
-#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
+
+	FragTrap fr4gtp("fr4gtp");
+	fr4gtp.attack("another fr4gtp");
+	fr4gtp.takeDamage(6);
+	fr4gtp.beRepaired(4);
+	fr4gtp.takeDamage(3);
+	fr4gtp.highFivesGuys();
+	fr4gtp.beRepaired(8);
+	fr4gtp.takeDamage(17);
 
 	ScavTrap scav("svaavvvv");
     scav.attack("another ScavTrap");

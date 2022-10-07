@@ -1,7 +1,7 @@
-NAME = Zombie
+NAME = FragTrap
 CC = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98
-SRC = main.cpp Zombie.cpp randomChump.cpp newZombie.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 all: $(NAME)
 
