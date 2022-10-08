@@ -2,30 +2,52 @@
 
 int main()
 {
+	{
+		DiamondTrap di4mondtp("di4mondtp");
 
-	FragTrap fr4gtp("fr4gtp");
-	fr4gtp.attack("another fr4gtp");
-	fr4gtp.takeDamage(6);
-	fr4gtp.beRepaired(4);
-	fr4gtp.takeDamage(3);
-	fr4gtp.highFivesGuys();
-	fr4gtp.beRepaired(8);
-	fr4gtp.takeDamage(17);
+		di4mondtp.attack("Handsome Jack");
+		di4mondtp.takeDamage(6);
+		di4mondtp.beRepaired(4);
+		di4mondtp.takeDamage(3);
+		di4mondtp.guardGate();
+		di4mondtp.highFivesGuys();
+		di4mondtp.whoAmI();
+		di4mondtp.beRepaired(8);
+		di4mondtp.takeDamage(17);
+	}
+	std::cout << "----------------------------------------" << std::endl;
+	{
+		FragTrap fr4gtp("fr4gtp");
 
-	ScavTrap scav("svaavvvv");
-    scav.attack("another ScavTrap");
-    scav.takeDamage(6);
-	scav.beRepaired(4);
-	scav.takeDamage(3);
-	scav.beRepaired(8);
-	scav.takeDamage(17);
+		fr4gtp.attack("Handsome Jack");
+		fr4gtp.takeDamage(6);
+		fr4gtp.beRepaired(4);
+		fr4gtp.takeDamage(3);
+		fr4gtp.highFivesGuys();
+		fr4gtp.beRepaired(8);
+		fr4gtp.takeDamage(17);
+	}
+	std::cout << "----------------------------------------" << std::endl;
+	{
+		ScavTrap sc4vtp("sc4vtp");
 
+		sc4vtp.attack("Handsome Jack");
+		sc4vtp.takeDamage(6);
+		sc4vtp.beRepaired(4);
+		sc4vtp.takeDamage(3);
+		sc4vtp.guardGate();
+		sc4vtp.beRepaired(8);
+		sc4vtp.takeDamage(17);
+	}
+	std::cout << "----------------------------------------" << std::endl;
+	{
+		ClapTrap cl4ptp("cl4ptp");
 
-    ClapTrap clap("clapppp");
-    clap.attack("Someone");
-    clap.takeDamage(6);
-	clap.beRepaired(4);
-	clap.takeDamage(3);
-	clap.beRepaired(8);
-	clap.takeDamage(17);
+		cl4ptp.attack("Handsome Jack");
+		cl4ptp.takeDamage(6);
+		cl4ptp.beRepaired(4);
+		cl4ptp.takeDamage(3);
+		cl4ptp.beRepaired(8);
+		cl4ptp.takeDamage(17);
+	}
 }
