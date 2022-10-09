@@ -1,7 +1,7 @@
 NAME = Animals
 CC = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98
-SRC = main.cpp Animal.cpp   Cat.cpp Dog.cpp
+SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 
 all: $(NAME)
 
