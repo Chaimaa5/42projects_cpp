@@ -15,6 +15,20 @@ ClapTrap::~ClapTrap()
     std::cout << "ClapTrap destroyed" << std::endl;
 }
 
+ClapTrap::ClapTrap(ClapTrap & C)
+{
+    this->name = C.name;
+    this->energy_point = C.energy_point;
+    this->attack_point = C.attack_point;
+    this->hit_point = C.hit_point;
+}
+
+ClapTrap & ClapTrap::operator=(ClapTrap & C)
+{
+    std::cout << "ClapTrap Assignment operator is called for" << C.name << std::endl;
+    return (*this);
+}
+
 void    ClapTrap::attack(const std::string& target)
 {
     if( this->energy_point > 0 || this->attack_point > 0)
