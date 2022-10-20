@@ -10,8 +10,9 @@ HumanA::~HumanA()
     std::cout << "HumanB Destructor called\n";
 }
 
-void    HumanA::attack(){
-    std::cout << name << " attacks with their" << this->weapon.getType() << std::endl;
+void    HumanA::attack()
+{
+    std::cout << name << " attacks with their " << this->weapon.getType() << std::endl;
 }
 
 

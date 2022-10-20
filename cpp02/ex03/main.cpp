@@ -1,17 +1,13 @@
-#include "Fixed.hpp"
+#include "Point.hpp"
 int main( void ) 
 {
-    Fixed a;
-    Fixed const b(Fixed(5.05f) * Fixed(2));
-
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
-    //wrong result from fixed float constructor
-    std::cout << b << std::endl;
-    std::cout << Fixed::max( a, b ) << std::endl;
-
+    Point A(0, 0);
+    Point B(10, 30);
+    Point C(20,0);
+    Point P(0, 0);
+    if (bsp(A, B, C, P))
+        std::cout << "P is Inside";
+    else
+        std::cout << "P is Outside";
     return 0;
 }

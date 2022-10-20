@@ -7,12 +7,11 @@ Fixed::Fixed(const int fixed_point_number)
 
 Fixed::Fixed(const float fixed_point_number)
 {
-    this->fixed_point_number = roundf(fixed_point_number * (pow(2, fractional_bits) ));
+    this->fixed_point_number = roundf(fixed_point_number * (pow(2, fractional_bits)));
 }
 
 Fixed::Fixed()
 {
-    fixed_point_number = 0;
 }
 
 Fixed::~Fixed()
@@ -24,7 +23,7 @@ Fixed::Fixed(Fixed const & F)
     (*this) = F;
 }
 
-Fixed & Fixed::operator=(Fixed const & F)
+Fixed & Fixed::operator=(Fixed const & F) 
 {
 
     this->fixed_point_number = F.getRawBits();
@@ -105,27 +104,33 @@ bool Fixed::operator != (Fixed const & F1)
         return (0);
 }
 
-Fixed Fixed::operator * (Fixed const & F1)
+Fixed Fixed::operator*(Fixed const & F1)
 {
-    return (F1.fixed_point_number * this->fixed_point_number);
+    Fixed ret(F1.toFloat() * this->toFloat());
+    return (ret);
 }
 
-Fixed Fixed::operator + (Fixed const & F1)
+Fixed Fixed::operator+(Fixed const & F1)
 {
-    return (F1.fixed_point_number + this->fixed_point_number);
+    Fixed ret;
+    ret.fixed_point_number = F1.fixed_point_number + this->fixed_point_number;
+    return (ret);
+    
 }
 
 Fixed Fixed::operator - (Fixed const & F1)
 {
-    return (F1.fixed_point_number - this->fixed_point_number);
-}
+    Fixed ret;
+    ret.fixed_point_number = this->fixed_point_number - F1.fixed_point_number ;
+    return (ret);}
 
 Fixed Fixed::operator / (Fixed const & F1)
 {
-    return (F1.fixed_point_number / this->fixed_point_number);
+    Fixed ret( this->toFloat() / F1.toFloat());
+    return (ret);
 }
 
-Fixed & Fixed::operator ++ ()
+Fixed & Fixed::operator ++ ()   
 {
     ++(*this).fixed_point_number;
     return ((*this));

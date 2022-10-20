@@ -18,7 +18,7 @@ HumanB::~HumanB()
 void    HumanB::attack()
 {
     if (weapon)
-        std::cout << name << " attacks with their" << weapon->getType() << std::endl;
+        std::cout << name << " attacks with their " << weapon->getType() << std::endl;
     else
         std::cout << name << " Do not have a Weapon to attack" << std::endl;
 }

@@ -9,7 +9,7 @@ int main()
 {
     Zombie *zombie;
 
-    zombie = zombieHorde(-1, "zombie");
+    zombie = zombieHorde(10, "notme");
     if (zombie)
     {
         for (int i = 0; i < 10; i++)

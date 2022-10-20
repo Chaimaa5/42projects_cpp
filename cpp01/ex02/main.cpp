@@ -5,16 +5,16 @@ int main()
 {
     std::string str;
     std::string *stringPTR;
-    std::string stringREF;
+    std::string &stringREF = str;
+    
     str = "HI THIS IS BRAIN";
     stringPTR = &str;
-    stringREF = str;
-    std::cout << "Printing memory addresses" << std::endl;
-    std::cout << &str << std::endl;
-    std::cout << &stringPTR << std::endl;
-    std::cout << &stringREF << std::endl;
-    std::cout << "Printing values" << std::endl;
-    std::cout << str << std::endl;
-    std::cout << stringPTR << std::endl;
-    std::cout << stringREF << std::endl;
+    std::cout << "Printing memory addresses\n" << std::endl;
+    std::cout << "str: " << &str << std::endl;
+    std::cout << "stringPTR: " << &stringPTR << std::endl;
+    std::cout << "stringREF: " << &stringREF << std::endl << std::endl ;
+    std::cout << "Printing values\n" << std::endl;
+    std::cout << "str: " << str << std::endl;
+    std::cout << "stringPTR: " << stringPTR << std::endl;
+    std::cout <<"stringREF: " << stringREF << std::endl;
 }

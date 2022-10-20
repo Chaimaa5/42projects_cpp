@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cmath>
+
 class Fixed{
     private:
         float  fixed_point_number;
@@ -13,7 +14,7 @@ class Fixed{
         Fixed(const float fixed_point_number);
         ~Fixed();
         Fixed(Fixed const & F);
-        Fixed & operator=(Fixed const & F);
+       Fixed & operator=(Fixed const & F);
 
         int     getRawBits() const;
         void    setRawBits(int const fixed_point_number);
@@ -42,8 +43,6 @@ class Fixed{
         static Fixed & min(Fixed & F1, Fixed & F2);
         static const Fixed & max(Fixed const & F1, Fixed const & F2);
         static Fixed & max(Fixed & F1, Fixed & F2);
-
-
 };
 
 std::ostream& operator<<(std::ostream & os, const Fixed & F);

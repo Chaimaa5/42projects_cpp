@@ -1,5 +1,5 @@
 NAME = main
-CC = c++
+CC = clang++
 FLAGS = -Wall -Werror -Wextra -std=c++98
 SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
