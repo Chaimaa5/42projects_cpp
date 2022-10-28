@@ -5,23 +5,37 @@ ClapTrap::ClapTrap()
     std::cout << "ClapTrap Default  constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : name(name), hit_point(10), attack_point(0), energy_point(10)
+ClapTrap::ClapTrap(std::string name) : name(name), hit_point(100), attack_point(20), energy_point(50)
 {
     std::cout << "ClapTrap: "<< name << " constructed" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "ClapTrap destroyed" << std::endl;
+    std::cout << "ClapTrap " << name << " destroyed"<< std::endl;
+}
+
+ClapTrap::ClapTrap(ClapTrap & C)
+{
+    std::cout << "ClapTrap Copy Constructor is called for" << C.name << std::endl;
+    this->name = C.name;
+    this->energy_point = C.energy_point;
+    this->attack_point = C.attack_point;
+    this->hit_point = C.hit_point;
+}
+
+ClapTrap & ClapTrap::operator=(ClapTrap & C)
+{
+    std::cout << "ClapTrap Assignment operator is called for" << C.name << std::endl;
+    return (*this);
 }
 
 void    ClapTrap::attack(const std::string& target)
 {
-    if( this->energy_point > 0 || this->attack_point > 0)
+    if( this->energy_point > 0 || this->hit_point > 0)
     {
         this->energy_point -= 1;
-        this->attack_point -= 1;
-        std::cout << "ClapTrap " << this->name << " attacks "<<  target << ", causing him damage" << std::endl;
+        std::cout << "ClapTrap " << this->name << " attacks "<<  target << ", causing him damage"  << std::endl;
     }
     else
         std::cout << "ClapTrap " << this->name << " can't attack "<<  target << ", No energy points left! " << std::endl;
@@ -46,4 +60,24 @@ void    ClapTrap::beRepaired(unsigned int amount)
     }
     else
         std::cout << "ClapTrap " << this->name << " can't repair "<<  ", No energy points left! " << std::endl;
+}
+
+int     ClapTrap::getHitPoint()
+{
+    return (hit_point);
+}
+
+int     ClapTrap::getAttackPoint()
+{
+    return (attack_point);
+}
+
+int     ClapTrap::getEnergyPoint()
+{
+    return (energy_point);
+}
+
+std::string ClapTrap::getName()
+{
+    return (name);
 }

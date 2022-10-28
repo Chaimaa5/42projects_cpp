@@ -2,52 +2,41 @@
 
 int main()
 {
+    std::cout << "------------------------------DiamondTrap------------------------------ "<< std::endl;
+    {
+        DiamondTrap	diamond("Fri5olito");
+		diamond.attack("Di4mond");
+		diamond.takeDamage(5);
+		diamond.beRepaired(2);
+		diamond.takeDamage(4);
+		diamond.highFivesGuys();
+		diamond.guardGate();
+		diamond.whoAmI();
+    }
+    std::cout << "------------------------------FragTrap------------------------------ "<< std::endl;
+ 	{
+        FragTrap	Fr4gito("Fr4gito");
+		Fr4gito.attack("Fr4g");
+		Fr4gito.takeDamage(5);
+		Fr4gito.beRepaired(2);
+		Fr4gito.takeDamage(4);
+		Fr4gito.highFivesGuys();
+    }
+    std::cout << "------------------------------ScavTrap------------------------------ "<< std::endl;
+ 	{
+        ScavTrap	Sc4vito("Sc4vito");
+		Sc4vito.attack("Sc4vitoss");
+		Sc4vito.takeDamage(5);
+		Sc4vito.beRepaired(2);
+		Sc4vito.takeDamage(4);
+		Sc4vito.guardGate();
+    }
+    std::cout << "------------------------------ClapTrap------------------------------ "<< std::endl;
 	{
-		DiamondTrap di4mondtp("di4mondtp");
-
-		di4mondtp.attack("Handsome Jack");
-		di4mondtp.takeDamage(6);
-		di4mondtp.beRepaired(4);
-		di4mondtp.takeDamage(3);
-		di4mondtp.guardGate();
-		di4mondtp.highFivesGuys();
-		di4mondtp.whoAmI();
-		di4mondtp.beRepaired(8);
-		di4mondtp.takeDamage(17);
-	}
-	std::cout << "----------------------------------------" << std::endl;
-	{
-		FragTrap fr4gtp("fr4gtp");
-
-		fr4gtp.attack("Handsome Jack");
-		fr4gtp.takeDamage(6);
-		fr4gtp.beRepaired(4);
-		fr4gtp.takeDamage(3);
-		fr4gtp.highFivesGuys();
-		fr4gtp.beRepaired(8);
-		fr4gtp.takeDamage(17);
-	}
-	std::cout << "----------------------------------------" << std::endl;
-	{
-		ScavTrap sc4vtp("sc4vtp");
-
-		sc4vtp.attack("Handsome Jack");
-		sc4vtp.takeDamage(6);
-		sc4vtp.beRepaired(4);
-		sc4vtp.takeDamage(3);
-		sc4vtp.guardGate();
-		sc4vtp.beRepaired(8);
-		sc4vtp.takeDamage(17);
-	}
-	std::cout << "----------------------------------------" << std::endl;
-	{
-		ClapTrap cl4ptp("cl4ptp");
-
-		cl4ptp.attack("Handsome Jack");
-		cl4ptp.takeDamage(6);
-		cl4ptp.beRepaired(4);
-		cl4ptp.takeDamage(3);
-		cl4ptp.beRepaired(8);
-		cl4ptp.takeDamage(17);
-	}
+        ClapTrap	Cl4apito("Cl4apito");
+		Cl4apito.attack("Cl4apitoss");
+		Cl4apito.takeDamage(5);
+		Cl4apito.beRepaired(2);
+		Cl4apito.takeDamage(4);
+    }
 }
