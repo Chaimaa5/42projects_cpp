@@ -7,8 +7,8 @@ int main() {
     const Animal* j = new Dog();
     const Animal* i = new Cat();
 
-    std::cout << i->getType() << " " << std::endl;
-    std::cout << j->getType() << " " << std::endl;
+    std::cout << "i type is : " << i->getType() << std::endl;
+    std::cout << "j type is : " << j->getType() << std::endl;
     j->makeSound(); 
     i->makeSound();
     meta->makeSound();
@@ -20,7 +20,7 @@ int main() {
     const WrongAnimal* Wrongmeta = new WrongAnimal(); 
     const WrongAnimal* Wrongj = new WrongCat();
 
-    std::cout << Wrongj->getType() << " " << std::endl;
+    std::cout << Wrongj->getType() << std::endl;
     Wrongj->makeSound(); 
     Wrongmeta->makeSound();
     delete  Wrongj;

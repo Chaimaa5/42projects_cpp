@@ -7,10 +7,10 @@ class AAnimal{
     protected:
         std::string type;
     public:
-        virtual AAnimal & operator=(AAnimal const & A) = 0;
-        virtual ~AAnimal();
-        virtual void    makeSound() const = 0;
+        virtual AAnimal & operator=(AAnimal const & A);
+        virtual ~AAnimal() = 0;
+        virtual void    makeSound() const;
         const std::string &getType() const;
-        virtual Brain *getBrain() const = 0;
+        virtual Brain *getBrain() const;
 };
 #endif
