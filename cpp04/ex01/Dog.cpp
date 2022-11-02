@@ -4,7 +4,8 @@ Dog::Dog(Dog const & D)
 {
     std::cout << "Copy constructor  called for Dog " << std::endl;
     Animal::type = D.type;
-    *this = D;
+    B = new Brain;
+    *B = *(D.B);
 }
 
 Dog & Dog::operator=(Dog const & D)

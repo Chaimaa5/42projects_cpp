@@ -10,7 +10,9 @@ Cat::Cat()
 Cat::Cat(Cat const & C)
 {
     std::cout << "Copy constructor  called for Cat " << std::endl;
-   Animal::type  = C.type;
+    Animal::type  = C.type;
+    B = new Brain;
+    *B = *(C.B);
 }
 
 Cat & Cat::operator=(Cat const & C)

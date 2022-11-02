@@ -9,7 +9,7 @@ class Dog: public Animal{
         Brain *B;
     public:
         Dog();
-        ~Dog();
+        virtual ~Dog();
         Dog(Dog const & D);
         Dog & operator=(Dog const & D);
         virtual void makeSound() const;
