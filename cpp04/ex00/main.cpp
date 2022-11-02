@@ -20,8 +20,10 @@ int main() {
     const WrongAnimal* Wrongmeta = new WrongAnimal(); 
     const WrongAnimal* Wrongj = new WrongCat();
 
-    std::cout << j->getType() << " " << std::endl;
+    std::cout << Wrongj->getType() << " " << std::endl;
     Wrongj->makeSound(); 
     Wrongmeta->makeSound();
+    delete  Wrongj;
+    delete  Wrongmeta;
     return 0; 
 }

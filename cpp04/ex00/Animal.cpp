@@ -5,6 +5,7 @@ Animal::Animal()
     this->type = "Animal";
     std::cout << "Default constructor called for Animal " << std::endl;
 }
+
 Animal::Animal(std::string type) : type(type)
 {
     std::cout << "Parametrized constructor called for Animal " << std::endl;
