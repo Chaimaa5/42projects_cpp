@@ -11,6 +11,7 @@ AMateria::AMateria(AMateria & A){
 }
 
 AMateria & AMateria::operator=(AMateria & A){
+    this->type = A.type;
     return ((*this));
 }
 
@@ -18,6 +19,8 @@ std::string const & AMateria::getType() const{
     return (this->type);
 }
 
-AMateria* AMateria::clone() const{}
+void AMateria::use(ICharacter & target){
+    std::cout <<  "* shoots an ice bolt at " << target.getName() << " *" <<std::endl;
+    std::cout <<  "* heals " << target.getName() << "'s wounds *" <<std::endl;
 
-void AMateria::use(ICharacter & target){}
+}

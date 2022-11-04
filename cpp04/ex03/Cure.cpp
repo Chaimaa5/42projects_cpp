@@ -5,6 +5,7 @@ Cure::Cure(){}
 Cure::~Cure(){}
 
 Cure & Cure::operator=(Cure & C){
+    this->type = C.type;
     return ((*this));
 }
 
@@ -20,4 +21,8 @@ Cure* Cure::clone() const{
     Cure *C = new Cure;
 
     return (C);    
+}
+
+void Cure::use(ICharacter & target){
+    std::cout <<  "Cure: * heals " << target.getName() << "'s wounds *" <<std::endl;
 }
