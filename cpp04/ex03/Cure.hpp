@@ -9,7 +9,7 @@ class Cure : public AMateria{
         Cure & operator=(Cure & C);
         Cure(Cure & C);
         std::string const & getType() const;
-        virtual Cure* clone() const;
+        virtual AMateria* clone() const;
         virtual void use(ICharacter & target);
 };
 #endif

@@ -1,6 +1,8 @@
 #ifndef ICE_HPP
 #define ICE_HPP
-#include "Cure.hpp"
+
+#include "AMateria.hpp"
+// #include "ICharacter.hpp"
 class Ice: public AMateria{
      public:
         Ice();
@@ -8,7 +10,7 @@ class Ice: public AMateria{
         Ice & operator=(Ice & I);
         Ice(Ice & I);
         std::string const & getType() const;
-        virtual Ice* clone() const;
+        virtual AMateria* clone() const;
         virtual void use(ICharacter & target);
 };
 #endif

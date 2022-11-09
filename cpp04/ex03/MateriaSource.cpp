@@ -1,5 +1,4 @@
 #include "MateriaSource.hpp"
-
 MateriaSource::~MateriaSource(){}
 
 MateriaSource::MateriaSource(){}
@@ -9,14 +8,29 @@ MateriaSource::MateriaSource(MateriaSource & M){
 }
 
 MateriaSource & MateriaSource::operator=(MateriaSource & M){
+    for(int i = 0; i < 4; i++)
+        this->inventory[i]  = M.inventory[i];
     return (*this);
 }
 
 void MateriaSource::learnMateria(AMateria *M){
-    
+    for(int i = 0; i < 4; i++)
+    {
+        if (!this->inventory[i])
+        {
+            this->inventory[i] = M->clone();
+        }
+    }
 }
 
 AMateria*  MateriaSource::createMateria(std::string const & type){
-    AMateria *M;
-    return (M);
+    for(int i = 0; i < 4; i++)
+    {
+        if (!this->inventory[i])
+            return (NULL);
+        if (this->inventory[i]->getType() == type)
+        {
+            return (this->inventory[i]->clone());
+        }
+    }
 }
