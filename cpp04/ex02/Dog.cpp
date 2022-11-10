@@ -10,15 +10,16 @@ Dog::Dog(Dog const & D)
 Dog & Dog::operator=(Dog const & D)
 {
     std::cout << "assignment operator called for Dog " << D.type << std::endl;
+    this->B = new Brain();
     this->B = D.B;
     return (*this);
 }
 
 Dog::Dog()
 {
-    this->B = new Brain();
-    this->type = "Dog";
     std::cout << "Dog Default constructor called" << std::endl;
+    this->type = "Dog";
+    this->B = new Brain();
 }
 
 Dog::~Dog()
@@ -35,12 +36,4 @@ void    Dog::makeSound() const
 Brain    *Dog::getBrain() const
 {
     return (this->B);
-}
-
-AAnimal & Dog::operator=(AAnimal const & A)
-{
-    std::cout << "assignment operator called for AAnimal " << std::endl;
-    this->type = A.getType();
-    (*this->B) = (*A.getBrain());
-    return (*this);
 }

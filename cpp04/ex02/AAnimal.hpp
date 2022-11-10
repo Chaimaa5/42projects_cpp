@@ -6,11 +6,12 @@
 class AAnimal{
     protected:
         std::string type;
+        AAnimal(std::string type);
     public:
+        AAnimal();
         virtual AAnimal & operator=(AAnimal const & A);
         virtual ~AAnimal() = 0;
         virtual void    makeSound() const;
         const std::string &getType() const;
-        virtual Brain *getBrain() const;
 };
 #endif

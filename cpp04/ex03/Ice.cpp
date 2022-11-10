@@ -2,6 +2,7 @@
 
 Ice::Ice(){
     std::cout <<"Ice Constructed\n";
+    this->type = "Ice";
 }
 
 Ice::~Ice(){
@@ -25,7 +26,7 @@ std::string const & Ice::getType() const{
 
 AMateria* Ice::clone() const{
     AMateria *I = new Ice;
-    
+    std::cout << "here\n";
     return (I);    
 }
 

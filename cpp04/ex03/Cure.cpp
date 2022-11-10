@@ -2,6 +2,7 @@
 
 Cure::Cure(){
     std::cout << "Cure Constructed\n";
+    this->type = "Cure";
 }
 
 Cure::~Cure(){
@@ -25,6 +26,7 @@ std::string const & Cure::getType() const{
 
 AMateria* Cure::clone() const{
     AMateria *C = new Cure;
+    std::cout << "here\n";
     return (C);    
 }
 

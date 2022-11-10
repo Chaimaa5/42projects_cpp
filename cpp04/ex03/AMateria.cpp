@@ -13,7 +13,7 @@ AMateria::~AMateria(){
 }
 
 AMateria::AMateria(AMateria & A){
-     std::cout << "AMateria Copy Constructed\n";
+    std::cout << "AMateria Copy Constructed\n";
     (*this) = A;
 }
 
