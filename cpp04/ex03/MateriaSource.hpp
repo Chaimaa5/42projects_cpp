@@ -3,6 +3,8 @@
 #include "IMateriaSource.hpp"
 #include "AMateria.hpp"
 #include <iostream>
+class AMateria;
+class IMateriaSource;
 class MateriaSource: public IMateriaSource{
     private:
         AMateria* inventory[4];
