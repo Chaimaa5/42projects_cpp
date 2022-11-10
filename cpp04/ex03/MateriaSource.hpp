@@ -1,5 +1,5 @@
-#ifndef IMATERIASOURCE_HPP
-#define IMATERIASOURCE_HPP
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 #include "IMateriaSource.hpp"
 #include "AMateria.hpp"
 #include <iostream>

@@ -33,4 +33,5 @@ AMateria*  MateriaSource::createMateria(std::string const & type){
             return (this->inventory[i]->clone());
         }
     }
+    return (NULL);
 }
