@@ -1,16 +1,24 @@
 #include "AMateria.hpp"
 
-AMateria::AMateria(std::string const & type) : type(type){}
+AMateria::AMateria(std::string const & type) : type(type){
+    std::cout << "Character " << type << " Constructed\n";
+}
 
-AMateria::AMateria(){}
+AMateria::AMateria(){
+    // std::cout << "AMateria Constructed\n";
+}
 
-AMateria::~AMateria(){}
+AMateria::~AMateria(){
+    // std::cout << "AMateria Destructed\n";
+}
 
 AMateria::AMateria(AMateria & A){
+    // std::cout << "AMateria Copy Constructed\n";
     (*this) = A;
 }
 
 AMateria & AMateria::operator=(AMateria & A){
+    // std::cout << "AMateria Assignment operator\n";
     this->type = A.type;
     return ((*this));
 }
@@ -19,8 +27,4 @@ std::string const & AMateria::getType() const{
     return (this->type);
 }
 
-void AMateria::use(ICharacter & target){
-    std::cout <<  "* shoots an ice bolt at " << target.getName() << " *" <<std::endl;
-    std::cout <<  "* heals " << target.getName() << "'s wounds *" <<std::endl;
-
-}
+void AMateria::use(ICharacter & ){}

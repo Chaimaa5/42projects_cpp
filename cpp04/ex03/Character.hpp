@@ -1,17 +1,22 @@
+#ifndef CHARACTER_HPP
+#define CHARACTER_HPP
 #include "ICharacter.hpp"
-#include "AMateria.hpp"
+#include <iostream>
+
 class Character: public ICharacter{
     private:
         std::string Name;
-        AMateria    *inventory[4];
+        AMateria* inventory[4];
     public:
-        virtual ~Character();
+         ~Character();
         Character();
-        Character(std::string Name);
-        Character(Character & A);
-        Character & operator=(Character & A);
-        virtual std::string const &getName() const;
-        virtual void equip(AMateria *m);
-        virtual void unequip(int idx);
-        virtual void use(int idx, ICharacter & target); 
+        Character(const std::string  & Name);
+        Character(const Character & A);
+        Character & operator=(const Character & op);
+         std::string  const &getName() const;
+         void equip(AMateria *m);
+         void unequip(int idx);
+         void use(int idx, ICharacter & target); 
 };
+
+#endif

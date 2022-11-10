@@ -1,15 +1,26 @@
 #include "Ice.hpp"
 
-Ice::Ice(){std::cout <<"hello";}
+Ice::Ice(){
+    std::cout <<"Ice Constructed\n";
+    this->type = "ice";
+}
 
-Ice::~Ice(){}
+Ice::Ice(std::string const &type){
+    this->type = type;
+}
+
+Ice::~Ice(){
+    // std::cout <<"Ice Destructed\n";
+}
 
 Ice & Ice::operator=(Ice & I){
+    std::cout <<"Ice Assignment Operator\n";
     this->type = I.type;
     return ((*this));
 }
 
 Ice::Ice(Ice & I){
+    // std::cout <<"Ice Copy Constructor";
     (*this) = I;
 }
 
@@ -18,8 +29,7 @@ std::string const & Ice::getType() const{
 }
 
 AMateria* Ice::clone() const{
-    AMateria *I = new Ice;
-    
+    AMateria *I = new Ice(this->type);
     return (I);    
 }
 

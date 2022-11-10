@@ -1,16 +1,28 @@
 #include "Cure.hpp"
 
-Cure::Cure(){}
+Cure::Cure(){
+    // std::cout << "Cure Constructed\n";
+    this->type = "cure";
+}
 
-Cure::~Cure(){}
+Cure::~Cure(){
+    // std::cout << "Cure Destructed\n";
+}
 
 Cure & Cure::operator=(Cure & C){
+    // std::cout << "Cure Assignment Operator\n";
     this->type = C.type;
     return ((*this));
 }
 
 Cure::Cure(Cure & C){
+    // std::cout << "Copy Constructed\n";
+   this->type = C.type;
     (*this) = C;
+}
+
+Cure::Cure(std::string const &type){
+    this->type = type;
 }
 
 std::string const & Cure::getType() const{
@@ -18,8 +30,7 @@ std::string const & Cure::getType() const{
 }
 
 AMateria* Cure::clone() const{
-    AMateria *C = new Cure;
-
+    AMateria *C = new Cure(this->type);
     return (C);    
 }
 
