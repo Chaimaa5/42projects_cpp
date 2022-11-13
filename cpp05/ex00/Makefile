@@ -6,13 +6,13 @@
 #    By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/13 17:34:33 by cel-mhan          #+#    #+#              #
-#    Updated: 2022/11/13 17:34:54 by cel-mhan         ###   ########.fr        #
+#    Updated: 2022/11/13 18:22:47 by cel-mhan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Bureaucrat
 CC = c++
-FLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address
+FLAGS = -Wall -Werror -Wextra -std=c++98
 SRC = main.cpp Bureaucrat.cpp
 
 all: $(NAME)

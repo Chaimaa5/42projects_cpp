@@ -8,14 +8,16 @@ Bureaucrat::Bureaucrat()
 Bureaucrat::Bureaucrat(std::string Name, int Grade): Name(Name)
 {
 	try{
-		
+		if (Grade > 150)
+			throw GradeTooHighException();
+		else if (Grade < 0)
+			throw GradeTooLowException();
 	}
-	if (Grade > 150)
-		throw GradeTooHighException();
-	if (Grade < 0)
-		throw GradeTooLowException();
-	else 
-		this->Grade = Grade;
+	catch(const char & e)
+	{
+		std::cout << e;
+	}
+	this->Grade = Grade;
 }
 
 Bureaucrat::~Bureaucrat(){
@@ -48,6 +50,6 @@ void	Bureaucrat::decrement(){
 }
 
 std::ostream & operator<<(std::ostream & s, Bureaucrat & B){
-	s << B.getGrade() << std::endl;
+	s << B.getGrade();
 	return(s);
 }
