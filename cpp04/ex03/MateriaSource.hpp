@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/11 23:24:25 by cel-mhan          #+#    #+#             */
+/*   Updated: 2022/11/13 17:31:33 by cel-mhan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef MATERIASOURCE_HPP
 #define MATERIASOURCE_HPP
 #include "IMateriaSource.hpp"
@@ -9,12 +21,12 @@ class MateriaSource: public IMateriaSource{
     private:
         AMateria* inventory[4];
     public:
-        virtual ~MateriaSource();
+        ~MateriaSource();
         MateriaSource();
         MateriaSource(MateriaSource & M);
         MateriaSource & operator=(MateriaSource & M);
-        virtual void learnMateria(AMateria *);
-        virtual AMateria *createMateria(std::string const & type);
+         void learnMateria(AMateria *);
+         AMateria *createMateria(std::string const & type);
 };
 
 #endif

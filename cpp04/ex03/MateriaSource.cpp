@@ -1,21 +1,44 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/11 23:24:22 by cel-mhan          #+#    #+#             */
+/*   Updated: 2022/11/11 23:24:22 by cel-mhan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "MateriaSource.hpp"
-MateriaSource::~MateriaSource(){}
 
 MateriaSource::MateriaSource(){
     for (int i = 0; i < 4; i++)
-    {
             inventory[i] = NULL;
+}
+
+MateriaSource::~MateriaSource(){
+    for (int i = 0; i < 4; i++)
+    {
+        if (this->inventory[i])
+            delete this->inventory[i];
     }
-    
 }
 
 MateriaSource::MateriaSource(MateriaSource & M){
+    for (int i = 0; i < 4; i++)
+            inventory[i] = NULL;
     (*this) = M;
 }
 
 MateriaSource & MateriaSource::operator=(MateriaSource & M){
+    for (int i = 0; i < 4; i++)
+    {
+        if (this->inventory[i])
+            delete this->inventory[i];
+    }
     for(int i = 0; i < 4; i++)
-        this->inventory[i]  = M.inventory[i];
+        this->inventory[i]  = M.inventory[i]->clone();
     return (*this);
 }
 
@@ -24,13 +47,9 @@ void MateriaSource::learnMateria(AMateria *M){
     {
         if (!this->inventory[i])
         {
-            std::cout << "Learning AMateria " << i << std::endl; 
+            // std::cout << "Learning AMateria " << i << std::endl; 
             this->inventory[i] = M->clone();
-        }
-        else
-        {
-            std::cout << "No more places to Learn Materia\n";
-            break;
+            return ;
         }
     }
 }
@@ -40,9 +59,9 @@ AMateria*  MateriaSource::createMateria(std::string const & type){
     {
         if (!this->inventory[i])
             return (NULL);
-        else if (this->inventory[i]->getType() == type)
+        if (this->inventory[i]->getType() == type)
         {
-            std::cout << "Creating AMateria " << type << " \n"; 
+            // std::cout << "Creating AMateria: " << type << " \n"; 
             return (this->inventory[i]->clone());
         }
     }

@@ -11,16 +11,22 @@ int main() {
 			animals[i] = new Dog();
 		else
 			animals[i] = new Cat();
-		std::cout << animals[i]->getType() << std::endl;
+		std::cout << "New Animal: "<< animals[i]->getType() << std::endl;
 	}
-
 	for (int i = 0; i < 10; i++)
 		delete animals[i];
-		
-	Cat *c = new Cat;
+	Cat *c = new Cat();
 
 	brain = c->getBrain();
-	brain->setIdeas("first idea");
+	brain->setIdeas("I'm a Cat and a special creature");
 	std::cout << c->getBrain()->getIdeas()[0] << std::endl;
+
+	Dog *d = new Dog();
+
+	brain = d->getBrain();
+	brain->setIdeas("Dogs are the Best");
+	std::cout << d->getBrain()->getIdeas()[99] << std::endl;
+	delete d;
 	delete c;
+	return (0);
 }

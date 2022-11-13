@@ -14,8 +14,8 @@ Dog & Dog::operator=(Dog const & D)
 
 Dog::Dog()
 {
-    this->type = "Dog";
     std::cout << "Dog Default constructor called" << std::endl;
+    this->type = "Dog";
 }
 
 Dog::~Dog()

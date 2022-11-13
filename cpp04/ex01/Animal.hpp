@@ -5,8 +5,8 @@
 class Animal{
     protected:
         std::string type;
-        Animal(std::string type);
     public:
+        Animal(std::string type);
         Animal();
         Animal(Animal const & A);
         Animal & operator=(Animal const & A);

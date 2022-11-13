@@ -1,4 +1,4 @@
-NAME = abstract_animals
+NAME = AAnimal
 CC = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98
 SRC = main.cpp AAnimal.cpp Cat.cpp Dog.cpp Brain.cpp

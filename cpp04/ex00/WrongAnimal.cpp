@@ -2,9 +2,10 @@
 
 WrongAnimal::WrongAnimal()
 {
-    this->type = "WrongAnimal";
     std::cout << "Default constructor called for WrongAnimal " << std::endl;
+    this->type = "WrongAnimal";
 }
+
 WrongAnimal::WrongAnimal(std::string type) : type(type)
 {
     std::cout << "Parametrized constructor called for WrongAnimal " << std::endl;

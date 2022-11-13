@@ -11,7 +11,7 @@ class Cat: public AAnimal{
         Cat(Cat const & C);
         Cat & operator=(Cat const & C);
         virtual void makeSound() const;
-        virtual Brain *getBrain() const;
+        Brain *getBrain() const;
         // virtual AAnimal & operator=(AAnimal const & A);
 
 };

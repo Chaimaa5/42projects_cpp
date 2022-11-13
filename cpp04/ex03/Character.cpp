@@ -1,38 +1,58 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/11 23:23:58 by cel-mhan          #+#    #+#             */
+/*   Updated: 2022/11/12 17:28:22 by cel-mhan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Character.hpp"
 
 #include <iostream>
 Character::~Character(){
-    std::cout << "Character Destructed\n";
-}
-
-Character::Character(){
-     for(int i = 0; i < 4 ; i++)
+    for(int i = 0; i < 4 ; i++)
     {
         if (!this->inventory[i])
-            this->inventory[i] = NULL;
+            delete this->inventory[i];
     }
+    // std::cout << "Character Destructed\n";
 }
 
-Character::Character(std::string Name) : Name(Name){
-    std::cout << "Character " << Name <<" Constructed\n";
+Character::Character()
+{
+    Name = "Someone";
     for(int i = 0; i < 4 ; i++)
-       {
-           if (!this->inventory[i])
-           {
-               this->inventory[i] = NULL;
-           }
-       }
+        this->inventory[i] = NULL;
 }
 
-Character::Character(Character & A){
+Character::Character(const std::string & Name) : Name(Name){
+    // std::cout << "Character " << Name <<" Constructed\n";
+    for(int i = 0; i < 4 ; i++)
+        this->inventory[i] = NULL;
+}
+
+Character::Character(const Character & A){
+    for(int i = 0; i < 4 ; i++)
+        this->inventory[i] = NULL;
     (*this) = A;
 }
-Character & Character::operator=(Character & A){
-    this->Name = A.Name;
+Character & Character::operator=(const Character & C){
+    for (int i = 0; i < 4; i++)
+    {
+        if (this->inventory[i])
+            delete this->inventory[i];
+    }
+    for(int i = 0; i < 4 ; i++)
+        this->inventory[i] = C.inventory[i]->clone();
+    this->Name = C.Name;
     return ((*this));
 }
 
-const std::string  & Character::getName() const{
+std::string const  & Character::getName() const{
     return (this->Name);
 }
 
@@ -40,7 +60,11 @@ void Character::equip(AMateria *M){
     for(int i = 0; i < 4 ; i++)
     {
         if (!this->inventory[i])
+        {
             this->inventory[i] = M;
+            // std::cout << this->getName() << " equipped <" << this->inventory[i]->getType() <<">\n";			
+            return ;
+        }
     }
 }
 
@@ -50,10 +74,6 @@ void Character::unequip(int idx){
 }
 
 void Character::use(int idx, ICharacter & target){
-    if (idx >= 0 && idx < 4)
-    {
-        if (this->inventory[idx])
-            // std::cout << target.getName()  << idx;
-            this->inventory[idx]->use(target);
-    }
+    if ((idx >= 0 && idx < 4) && this->inventory[idx])
+        this->inventory[idx]->use(target);
 }

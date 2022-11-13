@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/11 23:24:11 by cel-mhan          #+#    #+#             */
+/*   Updated: 2022/11/11 23:24:11 by cel-mhan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ICE_HPP
 #define ICE_HPP
 
@@ -9,8 +21,9 @@ class Ice: public AMateria{
         ~Ice();
         Ice & operator=(Ice & I);
         Ice(Ice & I);
+        Ice(std::string const &type);
         std::string const & getType() const;
-        virtual AMateria* clone() const;
-        virtual void use(ICharacter & target);
+         AMateria* clone() const;
+         void use(ICharacter & target);
 };
 #endif

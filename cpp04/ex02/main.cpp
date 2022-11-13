@@ -5,6 +5,7 @@
 int main() {
     AAnimal	*animals[10];
 	Brain	*brain;
+	// AAnimal test;
 
 	for (int i = 0; i < 10; i++)
 	{

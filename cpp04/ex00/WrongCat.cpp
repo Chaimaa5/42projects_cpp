@@ -2,8 +2,8 @@
 
 WrongCat::WrongCat()
 {
-    this->type = "WrongCat";
     std::cout << "WrongCat Default constructor called" << std::endl;
+    this->type = "WrongCat";
 }
 
 WrongCat::WrongCat(WrongCat const & C)
@@ -25,5 +25,5 @@ WrongCat::~WrongCat()
 
 void    WrongCat::makeSound() const
 {
-    std::cout << "WrongCat doesn't barks, meoz meow\n";
+    std::cout << "WrongCat doesn't bark, meoz meow\n";
 }

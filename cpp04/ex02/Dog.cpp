@@ -3,15 +3,17 @@
 Dog::Dog(Dog const & D)
 {
     std::cout << "Copy constructor  called for Dog " << std::endl;
-    AAnimal::type = D.type;
-    *this = D;
+    this->type = D.type;
+    this->B = new Brain();
+    B = D.B;
 }
 
 Dog & Dog::operator=(Dog const & D)
 {
     std::cout << "assignment operator called for Dog " << D.type << std::endl;
+    delete B;
     this->B = new Brain();
-    this->B = D.B;
+    (*this->B) = *D.B; 
     return (*this);
 }
 

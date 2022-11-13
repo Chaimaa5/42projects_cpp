@@ -12,7 +12,7 @@ class Dog: public AAnimal{
         Dog(Dog const & D);
         Dog & operator=(Dog const & D);
         virtual void makeSound() const;
-        virtual Brain *getBrain() const;
+        Brain *getBrain() const;
 };
 
 #endif

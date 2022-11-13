@@ -2,22 +2,25 @@
 
 Cat::Cat()
 {
-    this->B = new Brain();
-    this->type = "Cat";
     std::cout << "Cat Default constructor called" << std::endl;
+    this->type = "Cat";
+    this->B = new Brain();
 }
 
 Cat::Cat(Cat const & C)
 {
     std::cout << "Copy constructor  called for Cat " << std::endl;
-    Animal::type  = C.type;
-    B = new Brain;
-    *B = *(C.B);
+    this->B = NULL;
+    (*this) = C;
 }
 
 Cat & Cat::operator=(Cat const & C)
 {
     std::cout << "assignment operator called for Cat " << C.type << std::endl;
+    this->type = C.type;
+    delete B;
+    this->B = new Brain();
+    (*this->B) = *C.B; 
     return (*this);
 }
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/11 23:24:01 by cel-mhan          #+#    #+#             */
+/*   Updated: 2022/11/11 23:24:01 by cel-mhan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
 #include "ICharacter.hpp"
@@ -8,15 +20,15 @@ class Character: public ICharacter{
         std::string Name;
         AMateria* inventory[4];
     public:
-        virtual ~Character();
+         ~Character();
         Character();
-        Character(std::string Name);
-        Character(Character & A);
-        Character & operator=(Character & A);
-        virtual const std::string  &getName() const;
-        virtual void equip(AMateria *m);
-        virtual void unequip(int idx);
-        virtual void use(int idx, ICharacter & target); 
+        Character(const std::string  & Name);
+        Character(const Character & A);
+        Character & operator=(const Character & op);
+         std::string  const &getName() const;
+         void equip(AMateria *m);
+         void unequip(int idx);
+         void use(int idx, ICharacter & target); 
 };
 
 #endif

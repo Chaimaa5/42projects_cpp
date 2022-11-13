@@ -2,8 +2,8 @@
 
 Animal::Animal()
 {
-    this->type = "Animal";
     std::cout << "Default constructor called for Animal " << std::endl;
+    this->type = "Animal";
 }
 
 Animal::Animal(std::string type) : type(type)

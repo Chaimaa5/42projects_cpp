@@ -19,10 +19,13 @@ int main() {
 
     const WrongAnimal* Wrongmeta = new WrongAnimal(); 
     const WrongAnimal* Wrongj = new WrongCat();
+    const WrongCat* Wrongt = new WrongCat();
 
     std::cout << Wrongj->getType() << std::endl;
     Wrongj->makeSound(); 
+    Wrongt->makeSound(); 
     Wrongmeta->makeSound();
+    delete  Wrongt;
     delete  Wrongj;
     delete  Wrongmeta;
     return 0; 

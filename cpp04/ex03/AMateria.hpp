@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/11 23:23:56 by cel-mhan          #+#    #+#             */
+/*   Updated: 2022/11/12 17:26:46 by cel-mhan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef AMATERIA_HPP
 #define AMATERIA_HPP
 
@@ -8,10 +20,10 @@ class ICharacter;
 class AMateria{
     protected:
         std::string type;
-    public:
-        AMateria(std::string const & type);
         AMateria();
-        ~AMateria();
+        AMateria(std::string const & type);
+    public:
+        virtual ~AMateria();
         AMateria(AMateria & A);
         AMateria & operator=(AMateria & A);
         std::string const & getType() const;
