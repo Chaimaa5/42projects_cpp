@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-
+#include "Form.hpp"
 Bureaucrat::Bureaucrat()
 {
 	// std::cout << "Bureaucrat constructed\n";
@@ -35,6 +35,11 @@ int Bureaucrat::getGrade() const{
 	return (Grade);
 }
 
+Form *Bureaucrat::getForm()
+{
+	return (this->F);
+}
+
 void	Bureaucrat::increment(){
 	if (this->Grade >= 150)
 		throw (GradeTooLowException());
@@ -61,4 +66,11 @@ const char *Bureaucrat::GradeTooHighException::what() const throw()
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return ("Terminating with catched Exception: Grade Too Low.");
+}
+
+void	Bureaucrat::signForm(){
+	if (this->F->getSign() == 1)
+		std::cout << this->getName() << " signed "<< this->F->getName();
+	else
+		std::cout << this->getName() << " couldn't sign "<< this->F->getName() << "Because he doesn't want";
 }
