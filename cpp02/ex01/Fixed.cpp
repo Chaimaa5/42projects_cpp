@@ -8,7 +8,7 @@ Fixed::Fixed(const int fixed_point_number)
 
 Fixed::Fixed(const float fixed_point_number)
 {
-    this->fixed_point_number = roundf(fixed_point_number * (pow(2, fractional_bits) ));
+    this->fixed_point_number = fixed_point_number * (pow(2, fractional_bits));
     std::cout << "Float Constructor called\n";
 }
 

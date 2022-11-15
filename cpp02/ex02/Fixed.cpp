@@ -76,7 +76,7 @@ bool Fixed::operator > (Fixed const & F1)
 bool Fixed::operator >= (Fixed const & F1)
 {
     if  (F1.fixed_point_number >= this->fixed_point_number)
-        return (1);
+        return (1); 
     else
         return (0);
 }

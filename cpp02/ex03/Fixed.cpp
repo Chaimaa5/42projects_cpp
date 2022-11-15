@@ -126,7 +126,7 @@ Fixed Fixed::operator - (Fixed const & F1)
 
 Fixed Fixed::operator / (Fixed const & F1)
 {
-    Fixed ret( this->toFloat() / F1.toFloat());
+    Fixed ret(this->toFloat() / F1.toFloat());
     return (ret);
 }
 
