@@ -7,7 +7,6 @@ class Bureaucrat{
     private:
         const   std::string Name;
         int					Grade;
-		Form	*F;
 	public:
 		Bureaucrat();
 		Bureaucrat(std::string Name, int Grade);
@@ -24,9 +23,7 @@ class Bureaucrat{
 		};
 		void	increment();
 		void	decrement();
-		void	signForm();
-		Form * 	getForm();
-
+		void	signForm(Form &);
 };
 
 std::ostream & operator<<(std::ostream & s, const Bureaucrat & B);

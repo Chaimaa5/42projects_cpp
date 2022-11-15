@@ -35,10 +35,6 @@ int Bureaucrat::getGrade() const{
 	return (Grade);
 }
 
-Form *Bureaucrat::getForm()
-{
-	return (this->F);
-}
 
 void	Bureaucrat::increment(){
 	if (this->Grade >= 150)
@@ -68,9 +64,9 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 	return ("Terminating with catched Exception: Grade Too Low.");
 }
 
-void	Bureaucrat::signForm(){
-	if (this->F->getSign() == 1)
-		std::cout << this->getName() << " signed "<< this->F->getName();
+void	Bureaucrat::signForm(Form & F){
+	if (F.getSign() == 1)
+		std::cout << this->getName() << " signed "<< F.getName();
 	else
-		std::cout << this->getName() << " couldn't sign "<< this->F->getName() << "Because he doesn't want";
+		std::cout << this->getName() << " couldn't sign "<< F.getName() << "Because he doesn't want";
 }

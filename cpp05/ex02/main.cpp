@@ -1,15 +1,26 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 int main()
 {
     try{
-        Bureaucrat B("B", 1);
-        std::cout << B << std::endl;
-        B.decrement();
-        B.decrement();
-        B.decrement();
-        B.increment();
-        std::cout << B << std::endl;
+        Bureaucrat BS("Bureaucrat", 13);
+        Bureaucrat BP("Bureaucrat", 5);
+        Bureaucrat BR("Bureaucrat", 40);
+
+        ShrubberyCreationForm S("Berry Berry");
+        S.beSigned(BS);
+        S.Execute(BS);
+        
+        PresidentialPardonForm P("Bureaucrat");
+        P.beSigned(BP);
+        P.Execute(BP);
+
+        RobotomyRequestForm R("Robot");
+        R.beSigned(BR);
+        R.Execute(BR);
     }
     catch(const std::exception &e)
     {

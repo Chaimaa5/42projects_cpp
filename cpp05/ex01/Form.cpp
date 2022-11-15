@@ -17,17 +17,13 @@ Form & Form::operator=(Form const & F){
     return (*this);
 }
 
-void    Form::setSign(bool sign)
-{
-    this->sign = sign;
-}
-void    Form::beSigned(Bureaucrat & B){
+bool    Form::beSigned(Bureaucrat & B){
+    if (B.getGrade() <= 0)
+        sign = 1;
+        return true;
     if (B.getGrade() >= 150)
         throw (GradeTooLowException());
-    if (B.getGrade() <= 0)
-        B.getForm()->setSign(1);
 }
-
 const char *Form::GradeTooHighException::what() const throw(){
 	return ("Terminating with catched Exception: Grade Too High.");
 }

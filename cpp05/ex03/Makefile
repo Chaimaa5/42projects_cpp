@@ -6,14 +6,18 @@
 #    By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/13 17:34:33 by cel-mhan          #+#    #+#              #
-#    Updated: 2022/11/14 22:34:55 by cel-mhan         ###   ########.fr        #
+#    Updated: 2022/11/15 22:03:31 by cel-mhan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = 28B
+NAME = Intern
 CC = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98
-SRC = main.cpp Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+SRC = main.cpp Bureaucrat.cpp Form.cpp\
+	 PresidentialPardonForm.cpp \
+	 RobotomyRequestForm.cpp \
+	 ShrubberyCreationForm.cpp \
+	 Intern.cpp
 
 all: $(NAME)
 

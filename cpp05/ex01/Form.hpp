@@ -15,7 +15,7 @@ class Form{
         ~Form();
         Form(Form const & F);
         Form & operator=(Form const & F);
-        void    beSigned(Bureaucrat &);
+        bool    beSigned(Bureaucrat &);
         class GradeTooHighException: public std::exception{
 			const char *what() const throw();
 		};
