@@ -2,7 +2,7 @@
 
 Bureaucrat::Bureaucrat()
 {
-	// std::cout << "Bureaucrat constructed\n";
+	std::cout << "Bureaucrat constructed\n";
 }
 
 Bureaucrat::Bureaucrat(std::string Name, int Grade): Name(Name)
@@ -12,10 +12,11 @@ Bureaucrat::Bureaucrat(std::string Name, int Grade): Name(Name)
 	if (Grade > 150)
 		throw (GradeTooLowException());
 	this->Grade = Grade;
+	std::cout << "Bureaucrat constructed\n";
 }
 
 Bureaucrat::~Bureaucrat(){
-	// std::cout << "Bureaucrat deleted\n";
+	std::cout << "Bureaucrat deleted\n";
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const & B): Name(B.Name){
@@ -28,6 +29,7 @@ Bureaucrat & Bureaucrat::operator=(Bureaucrat const & B){
 }
 
 const std::string & Bureaucrat::getName() const{
+	std::cout << "my name is null --- " << Name << " ---" ;
 	return (this->Name);
 }
 

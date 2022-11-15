@@ -3,7 +3,7 @@
 int main()
 {
     try{
-        Bureaucrat B("B", 1);
+        Bureaucrat B("birbir", 4);
         std::cout << B << std::endl;
         B.decrement();
         B.decrement();
