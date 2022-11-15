@@ -18,14 +18,13 @@ class Form{
         Form(Form const & F);
         Form & operator=(Form const & F);
     //Accessors
-        const std::string & getName();
+        const std::string getName();
         int     getSign();
         int     getSGrade();
         int     getEGrade();
-        void    setSign(bool sign);
         bool    beSigned(Bureaucrat &);
     //Methods
-        virtual void execute(Bureaucrat const & executor) const = 0;
+        virtual void Execute(Bureaucrat const & executor) const = 0;
     //Exception classes
         class GradeTooHighException: public std::exception{
 			const char *what() const throw();

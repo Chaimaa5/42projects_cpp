@@ -27,7 +27,7 @@ Bureaucrat & Bureaucrat::operator=(Bureaucrat const & B){
 	return (*this);
 }
 
-const std::string & Bureaucrat::getName() const{
+const std::string Bureaucrat::getName() const{
 	return (this->Name);
 }
 
@@ -35,10 +35,6 @@ int Bureaucrat::getGrade() const{
 	return (Grade);
 }
 
-Form *Bureaucrat::getForm()
-{
-	return (this->F);
-}
 
 void	Bureaucrat::increment(){
 	if (this->Grade >= 150)
@@ -73,4 +69,15 @@ void	Bureaucrat::signForm(Form & F){
 		std::cout << this->getName() << " signed "<< F.getName();
 	else
 		std::cout << this->getName() << " couldn't sign "<< F.getName() << "Because he doesn't want";
+}
+
+void	Bureaucrat::executeForm(Form const & form){
+	try{
+		form.Execute(*this);
+		std::cout << this->Name << " executed " << form.getName() << std::endl;
+	}
+	catch(const std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 }

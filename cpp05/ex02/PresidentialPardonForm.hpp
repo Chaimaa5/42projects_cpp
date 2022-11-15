@@ -9,5 +9,7 @@ class PresidentialPardonForm: public Form{
         PresidentialPardonForm(PresidentialPardonForm const & P);
         PresidentialPardonForm & operator=(PresidentialPardonForm const & P);
         std::string getTarget() const;
+        void ExecutePardon() const;
+        void Execute(Bureaucrat const & executor) const;
         
 };

@@ -1,5 +1,8 @@
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
 #include <iostream>
-
+// #include "Form.h"
+class Form;
 class Bureaucrat{
     private:
         const   std::string Name;
@@ -20,8 +23,9 @@ class Bureaucrat{
 		};
 		void	increment();
 		void	decrement();
-		void    signForm(Form F);
-
+		void	signForm(Form &);
 };
 
-std::ostream & operator<<(std::ostream & s, Bureaucrat & B);
+std::ostream & operator<<(std::ostream & s, const Bureaucrat & B);
+
+#endif

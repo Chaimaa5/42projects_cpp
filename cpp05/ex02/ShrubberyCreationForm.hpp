@@ -9,4 +9,6 @@ class ShrubberyCreationForm: public Form{
         ShrubberyCreationForm(ShrubberyCreationForm const & S);
         ShrubberyCreationForm & operator=(ShrubberyCreationForm const & S);
         std::string getTarget() const;
+        void ExecuteCreation() const;
+        void Execute(Bureaucrat const & executor) const;
 };

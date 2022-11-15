@@ -6,14 +6,14 @@
 #    By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/13 17:34:33 by cel-mhan          #+#    #+#              #
-#    Updated: 2022/11/14 17:31:20 by cel-mhan         ###   ########.fr        #
+#    Updated: 2022/11/13 18:22:47 by cel-mhan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Form
+NAME = Bureaucrat
 CC = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98
-SRC = main.cpp Bureaucrat.cpp Form.cpp
+SRC = main.cpp Bureaucrat.cpp
 
 all: $(NAME)
 

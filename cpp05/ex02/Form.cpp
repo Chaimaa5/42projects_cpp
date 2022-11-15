@@ -23,11 +23,6 @@ Form & Form::operator=(Form const & F){
     return (*this);
 }
 
-void    Form::setSign(bool sign)
-{
-    this->sign = sign;
-}
-
 bool    Form::beSigned(Bureaucrat & B){
     if (B.getGrade() <= 0)
         sign = 1;
@@ -44,7 +39,7 @@ const char *Form::GradeTooLowException::what() const throw(){
     	return ("Terminating with catched Exception: Grade Too Low.");
 }
 
-const std::string & Form::getName(){
+const std::string Form::getName(){
     return (Name);
 }
 

@@ -20,3 +20,14 @@ PresidentialPardonForm & PresidentialPardonForm::operator=(PresidentialPardonFor
 std::string PresidentialPardonForm::getTarget() const{
     return (target);
 }
+
+void PresidentialPardonForm::ExecutePardon() const{
+    std::cout << this->target << " has been pardoned by Zaphod Beeblebrox\n";
+}
+
+void    PresidentialPardonForm::Execute(Bureaucrat const & executor) const{
+    if (executor.getGrade() <= e_Grade && sign == 1)
+        ExecutePardon();
+    else
+        throw (GradeTooLowException());
+}

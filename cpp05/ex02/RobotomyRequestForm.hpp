@@ -9,4 +9,6 @@ class RobotomyRequestForm: public Form{
         RobotomyRequestForm(RobotomyRequestForm const & R);
         RobotomyRequestForm & operator=(RobotomyRequestForm const & R);
         std::string getTarget() const;
+        void ExecuteNoise() const;
+        void    Execute(Bureaucrat const & executor) const;
 };
