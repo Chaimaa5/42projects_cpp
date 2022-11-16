@@ -25,12 +25,12 @@ Bureaucrat::Bureaucrat(Bureaucrat const & B): Name(B.Name){
 }
 
 Bureaucrat & Bureaucrat::operator=(Bureaucrat const & B){
+	std::cout << "Bureaucrat Assignment operator\n";
 	this->Grade = B.Grade;
 	return (*this);
 }
 
 const std::string & Bureaucrat::getName() const{
-	std::cout << "my name is null --- " << Name << " ---" ;
 	return (this->Name);
 }
 
@@ -39,29 +39,31 @@ int Bureaucrat::getGrade() const{
 }
 
 void	Bureaucrat::increment(){
-	if (this->Grade >= 150)
-		throw (GradeTooLowException());
-	this->Grade++;
+	if (this->Grade == 1)
+		throw (GradeTooHighException());
+	this->Grade--;
+	std::cout << "Bureaucrat Grade incremented to: " << Grade << std::endl;
 }
 
 void	Bureaucrat::decrement(){
-	if (this->Grade <= 1)
-		throw (GradeTooHighException());
-	this->Grade--;
+	if (this->Grade == 150)
+		throw (GradeTooLowException());
+	this->Grade++;
+	std::cout << "Bureaucrat Grade decremented to: " << Grade << std::endl;
 }
 
 std::ostream & operator<<(std::ostream & os, const Bureaucrat & B)
 {
-    os << B.getGrade();
+    os << B.getName() << ", bureaucrat grade "<< B.getGrade();
     return (os);
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Terminating with catched Exception: Grade Too High.");
+	return ("Terminating with catched Bureaucrat Exception: Grade Too High.");
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("Terminating with catched Exception: Grade Too Low.");
+	return ("Terminating with catched Bureaucrat Exception: Grade Too Low.");
 }

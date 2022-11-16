@@ -3,13 +3,13 @@
 int main()
 {
     try{
-        Bureaucrat B("birbir", 0);
+        Bureaucrat B("birbir", 1);
         std::cout << B << std::endl;
-        B.decrement();
-        B.decrement();
         B.decrement();
         B.increment();
-        std::cout << B << std::endl;
+        B.increment();
+        B.decrement();
+        // std::cout << B << std::endl;
     }
     catch(const std::exception &e)
     {
