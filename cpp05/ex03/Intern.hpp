@@ -6,11 +6,10 @@
 #include "RobotomyRequestForm.hpp"
 class Intern{
     private:
-
+        Intern(Intern const & I);
+        Intern & operator=(Intern const I);
     public:
         Intern();
         ~Intern();
-        // Intern(Intern const & I);
-        // Intern & operator=(Intern const I);
         Form* makeForm(std::string name, std::string target);
 };

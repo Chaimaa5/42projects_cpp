@@ -1,10 +1,10 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(): Form("ShrubberyCreationForm", 145, 137){
+ShrubberyCreationForm::ShrubberyCreationForm(): Form("Shrubbery Creation Form", 145, 137){
 
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target): Form("ShrubberyCreationForm", 145, 137){
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target): Form("Shrubbery Creation Form", 145, 137){
     this->target = target;
 }
 
@@ -12,7 +12,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm(){
 
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & S): Form("ShrubberyCreationForm", 145, 137){
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & S): Form("Shrubbery Creation Form", 145, 137){
     this->target = S.target;
 }
 
