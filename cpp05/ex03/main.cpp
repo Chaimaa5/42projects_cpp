@@ -24,7 +24,7 @@ int main()
 
             F2->beSigned(BS);
             F2->Execute(BS);
-            
+
             F3->beSigned(BR);
             F3->Execute(BR);
         }

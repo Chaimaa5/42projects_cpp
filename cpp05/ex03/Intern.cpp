@@ -1,6 +1,5 @@
 #include "Intern.hpp"
 
-
 Intern::Intern(){
     std::cout << "an Intern has been constructed\n";
 }
@@ -8,7 +7,6 @@ Intern::Intern(){
 Intern::~Intern(){
     std::cout << "an Intern has been detructed\n";
 }
-
 
 Form* Intern::makeForm(std::string name, std::string target)
 {
