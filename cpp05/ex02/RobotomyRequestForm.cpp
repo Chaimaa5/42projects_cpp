@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/16 20:25:02 by cel-mhan          #+#    #+#             */
+/*   Updated: 2022/11/16 20:28:32 by cel-mhan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(): Form("RobotomyRequestForm", 72, 45){
@@ -16,11 +28,13 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & R): Form("R
     std::cout << "Robotomy Request Form Copied\n"; 
     this->target = R.target;
 }
+
 RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm const & R){
     std::cout << "Robotomy Request Form Assignment operator\n"; 
     this->target = R.target;
     return (*this);
 }
+
 std::string RobotomyRequestForm::getTarget() const{
     return (target);
 }

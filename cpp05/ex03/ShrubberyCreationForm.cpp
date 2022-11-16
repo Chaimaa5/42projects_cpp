@@ -1,22 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/16 20:25:50 by cel-mhan          #+#    #+#             */
+/*   Updated: 2022/11/16 20:30:57 by cel-mhan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(): Form("Shrubbery Creation Form", 145, 137){
-
+    std::cout << "Shrubbery Creation Form Constructed\n"; 
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target): Form("Shrubbery Creation Form", 145, 137){
+    std::cout << "Shrubbery Creation Form Constructed\n";
     this->target = target;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm(){
-
+    std::cout << "Shrubbery Creation Form Destructed\n";
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & S): Form("Shrubbery Creation Form", 145, 137){
-    this->target = S.target;
+    std::cout << "Shrubbery Creation Form Copied\n";
+    *this = S;
 }
 
 ShrubberyCreationForm & ShrubberyCreationForm::operator=(ShrubberyCreationForm const & S){
+    std::cout << "Shrubbery Assignment operator\n";
     this->target = S.target;
     return (*this);
 }

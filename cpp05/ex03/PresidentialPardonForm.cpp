@@ -1,22 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/16 20:25:40 by cel-mhan          #+#    #+#             */
+/*   Updated: 2022/11/16 20:30:30 by cel-mhan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm(): Form("Presidential Pardon Form", 25, 5){
-
+    std::cout << "Presidential Pardon Form Constructed\n"; 
 }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target): Form("Presidential Pardon Form", 25, 5){
+    std::cout << "Presidential Pardon Form Constructed\n"; 
     this->target = target;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm(){
-
+    std::cout << "Presidential Pardon Form destructed\n"; 
 }
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & P):Form("Presidential Pardon Form", 25, 5){
+    std::cout << "Presidential Pardon Form Copied\n"; 
     *this = P;
 }
 
 PresidentialPardonForm & PresidentialPardonForm::operator=(PresidentialPardonForm const & P){
+    std::cout << "Presidential Pardon Form Assignment operator\n"; 
     this->target = P.target;
     return (*this);
 }

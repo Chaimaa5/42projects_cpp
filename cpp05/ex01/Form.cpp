@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/16 20:24:25 by cel-mhan          #+#    #+#             */
+/*   Updated: 2022/11/16 20:24:25 by cel-mhan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Form.hpp"
 
 Form::Form():sign(0), s_Grade(0), e_Grade(0){
@@ -5,7 +17,11 @@ Form::Form():sign(0), s_Grade(0), e_Grade(0){
 }
 
 Form::Form(std::string Name, int s_Grade, int e_Grade): Name(Name), sign(0), s_Grade(s_Grade), e_Grade(e_Grade){
-    std::cout << "Form "<< Name <<"constructed\n";
+    if (s_Grade > 150 || e_Grade > 150)
+        throw (GradeTooLowException());
+    if (s_Grade < 1 || e_Grade < 1)
+        throw (GradeTooHighException());
+    std::cout << "Form "<< Name <<" constructed\n";
 }
 
 Form::~Form(){
