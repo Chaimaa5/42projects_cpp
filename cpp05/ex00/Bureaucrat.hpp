@@ -8,7 +8,7 @@ class Bureaucrat{
 		Bureaucrat();
 		Bureaucrat(std::string Name, int Grade);
 		~Bureaucrat();
-		Bureaucrat(Bureaucrat const & B);
+		Bureaucrat(Bureaucrat  const & B);
 		Bureaucrat & operator=(Bureaucrat const & B);
 		const std::string & getName() const; 
 		int getGrade() const;

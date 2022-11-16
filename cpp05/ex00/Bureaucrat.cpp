@@ -20,6 +20,7 @@ Bureaucrat::~Bureaucrat(){
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const & B): Name(B.Name){
+	std::cout << "Bureaucrat copy\n";
 	this->Grade = B.Grade;
 }
 
