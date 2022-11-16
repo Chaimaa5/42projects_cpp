@@ -13,6 +13,7 @@ class Form{
     public:
         Form();
         ~Form();
+        Form(std::string name, int s_Grade, int e_Grade);
         Form(Form const & F);
         Form & operator=(Form const & F);
         bool    beSigned(Bureaucrat &);
