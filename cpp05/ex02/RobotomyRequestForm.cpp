@@ -1,20 +1,23 @@
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(): Form("RobotomyRequestForm", 72, 45){
-
+    std::cout << "Robotomy Request Form Constructed\n"; 
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target): Form("RobotomyRequestForm", 72, 45){
+    std::cout << "Robotomy Request Form Constructed\n"; 
     this->target = target;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm(){
-
+    std::cout << "Robotomy Request Form Destructed\n"; 
 }
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & R): Form("RobotomyRequestForm", 72, 45){
+    std::cout << "Robotomy Request Form Copied\n"; 
     this->target = R.target;
 }
 RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm const & R){
+    std::cout << "Robotomy Request Form Assignment operator\n"; 
     this->target = R.target;
     return (*this);
 }

@@ -1,23 +1,26 @@
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm(): Form("PresidentialPardonForm", 25, 5){
-
+    std::cout << "Presidential Pardon Form Constructed\n"; 
 }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target): Form("PresidentialPardonForm", 25, 5){
+    std::cout << "Presidential Pardon Form Constructed\n"; 
     this->target = target;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm(){
-
+    std::cout << "Presidential Pardon Form destructed\n"; 
 }
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & P):Form("PresidentialPardonForm", 25, 5){
+    std::cout << "Presidential Pardon Form Copied\n"; 
     *this = P;
 }
 
 PresidentialPardonForm & PresidentialPardonForm::operator=(PresidentialPardonForm const & P){
-    (void)P;
+    std::cout << "Presidential Pardon Form Assignment operator\n"; 
+    this->target = P.target;
     return (*this);
 }
 
