@@ -3,6 +3,6 @@
 #include <exception>
 #include <limits>
 
-int ConvertToInt(std::string ar);
-char ConvertToChar(std::string ar);
-float ConvertToFloat(std::string ar);
+void ConvertToInt(std::string ar);
+void ConvertToChar(std::string ar);
+void ConvertToFloat(std::string ar);

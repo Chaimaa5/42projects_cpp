@@ -1,8 +1,7 @@
-
 NAME = Convert
-CC = clang++
+CC = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98
-SRC = main.cpp
+SRC = main.cpp Convert.cpp
 all: $(NAME)
 
 $(NAME):
