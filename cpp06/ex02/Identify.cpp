@@ -44,6 +44,38 @@ void identify(Base* p){
     CheckC(p);
 }
 
+void    CheckARef(Base& p)
+{
+    try{
+        p = dynamic_cast<A&>(p);
+        std::cout << "Right Guess is A" << std::endl;
+    }catch(const std::exception &e){
+        // std::cout << "" << std::endl;
+    }
+}
+
+void    CheckBRef(Base& p)
+{
+    try{
+        p = dynamic_cast<B&>(p);
+        std::cout << "Right Guess is B" << std::endl;
+    }catch(const std::exception &e){
+        // std::cout << "" << std::endl;
+    }
+}
+
+void    CheckCRef(Base& p)
+{
+    try{
+        p = dynamic_cast<C&>(p);
+        std::cout << "Right Guess is C" << std::endl;
+    }catch(const std::exception &e){
+        // std::cout << "" << std::endl;
+    }
+}
+
 void identify(Base& p){
-(void)p;
+   CheckARef(p);
+   CheckBRef(p);
+   CheckCRef(p);
 }
