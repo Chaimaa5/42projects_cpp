@@ -6,7 +6,7 @@ int main(int ac, char **av)
     {
         std::cout.precision(1);
 		std::cout << std::fixed;
-        std::string ar = std::string(av[1]);
+        std::string ar = av[1];
         ConvertToChar(ar);
         ConvertToInt(ar);
         ConvertToFloat(ar);

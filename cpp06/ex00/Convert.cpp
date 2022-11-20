@@ -25,7 +25,7 @@ void ConvertToInt(std::string ar){
     std::cout << "Int: ";
     try{
         int n = stoi(ar);
-        std::cout << static_cast<int>(n) << std::endl;
+        std::cout << (n) << std::endl;
     }
     catch(const std::exception & e){
         std::cout << "Impossible" << std::endl;
@@ -36,7 +36,7 @@ void   ConvertToFloat(std::string ar){
     std::cout << "Float: ";
     try{
         float f = stof(ar);
-        std::cout << static_cast<float>(f) << "f" << std::endl;
+        std::cout << f << "f" << std::endl;
     }
     catch(const std::exception & e){
         std::cout << "Impossible" << std::endl;
@@ -47,7 +47,7 @@ void   ConvertToDouble(std::string ar){
     std::cout << "Double: ";
     try{
         double f = stod(ar);
-        std::cout << static_cast<double>(f) << std::endl;
+        std::cout << f << std::endl;
     }
     catch(const std::exception & e){
         std::cout << "Impossible" << std::endl;

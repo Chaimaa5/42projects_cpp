@@ -6,3 +6,4 @@
 void ConvertToInt(std::string ar);
 void ConvertToChar(std::string ar);
 void ConvertToFloat(std::string ar);
+void   ConvertToDouble(std::string ar);
