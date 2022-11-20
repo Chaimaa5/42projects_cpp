@@ -15,11 +15,10 @@ Base* generate(void){
     return (ptr);
 }
 
-// void identify(Base* p){
+void identify(Base* p){
 
+}
 
-// }
+void identify(Base& p){
 
-// void identify(Base& p){
-
-// }
+}
