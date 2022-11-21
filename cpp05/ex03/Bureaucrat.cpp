@@ -6,7 +6,7 @@
 /*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 20:25:14 by cel-mhan          #+#    #+#             */
-/*   Updated: 2022/11/16 20:25:14 by cel-mhan         ###   ########.fr       */
+/*   Updated: 2022/11/17 19:56:14 by cel-mhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Bureaucrat::Bureaucrat()
 Bureaucrat::Bureaucrat(std::string Name, int Grade): Name(Name)
 {
 	if (Grade < 1)
-		throw (GradeTooHighException());
+		throw (std::runtime_error("racchid weldd nass"));
 	if (Grade > 150)
 		throw (GradeTooLowException());
 	this->Grade = Grade;

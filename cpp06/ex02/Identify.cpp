@@ -1,5 +1,10 @@
 #include "Identify.hpp"
 
+Base::~Base()
+{
+    std::cout << "Base deleted\n";
+}
+
 Base* generate(void){
     Base* ptr;
 
@@ -48,8 +53,9 @@ void    CheckARef(Base& p)
     try{
         p = dynamic_cast<A&>(p);
         std::cout << "The type is: A" << std::endl;
-    }catch(const std::exception &e){
-        // std::cout << "" << std::endl;
+    }catch(const std::bad_cast &e){
+        std::cerr << "Exception " << e.what() << " thrown." << std::endl;
+        std::cerr << "Object is not of type A" << std::endl;    
     }
 }
 
@@ -58,8 +64,9 @@ void    CheckBRef(Base& p)
     try{
         p = dynamic_cast<B&>(p);
         std::cout << "The type is: B" << std::endl;
-    }catch(const std::exception &e){
-        // std::cout << "" << std::endl;
+    }catch(const std::bad_cast &e){
+        std::cerr << "Exception " << e.what() << " thrown." << std::endl;
+        std::cerr << "Object is not of type B" << std::endl;    
     }
 }
 
@@ -68,8 +75,9 @@ void    CheckCRef(Base& p)
     try{
         p = dynamic_cast<C&>(p);
         std::cout << "The type is: C" << std::endl;
-    }catch(const std::exception &e){
-        // std::cout << "" << std::endl;
+    }catch(const std::bad_cast &e){
+        std::cerr << "Exception " << e.what() << " thrown." << std::endl;
+        std::cerr << "Object is not of type C" << std::endl;    
     }
 }
 

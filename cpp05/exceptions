@@ -1,0 +1,7 @@
+This continues until the exception handler finds the catch block interested in catching the exception in which case it does not return back to the operating system. But before it calls the catch block (it knows the address of the catch block from funcinfo structure, see figure 4), it must perform stack unwinding: cleaning up the stack frames of the functions below this function's frame. Cleaning of the stack frame involves nice little intricacy: The exception handler must find all the local objects of the function alive on the frame at the time of the exception and call their destructors. I will discuss more about it in a later section.
+
+Exceptions provide a way to react to exceptional circumstances (like runtime errors) in programs by transferring control to special functions called handlers.
+
+To catch exceptions, a portion of code is placed under exception inspection. This is done by enclosing that portion of code in a try-block. When an exceptional circumstance arises within that block, an exception is thrown that transfers the control to the exception handler. If no exception is thrown, the code continues normally and all handlers are ignored.
+
+An exception is thrown by using the throw keyword from inside the try block. Exception handlers are declared with the keyword catch, 

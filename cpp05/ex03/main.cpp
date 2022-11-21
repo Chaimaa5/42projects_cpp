@@ -6,7 +6,7 @@
 /*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 20:25:30 by cel-mhan          #+#    #+#             */
-/*   Updated: 2022/11/16 20:25:30 by cel-mhan         ###   ########.fr       */
+/*   Updated: 2022/11/17 19:57:36 by cel-mhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ int main()
         Form* F2;
         Form* F3;
 
-        Bureaucrat BS("Bureaucrat", 13);
+        Bureaucrat BS("Bureaucrat", 1);
         Bureaucrat BP("Bureaucrat", 5);
         Bureaucrat BR("Bureaucrat", 40);
         try{
-            F1 = intern1.makeForm("Presidential Pardon Form", "El Presidente");
+            F1 = intern1.makeForm("Presidential", "El Presidente");
             F2 = intern2.makeForm("Shrubbery Creation Form", "Berry Berry");
             F3 = intern3.makeForm("Robotomy Request Form", "RobRob");
 
@@ -40,9 +40,9 @@ int main()
             F3->beSigned(BR);
             F3->Execute(BR);
         }
-        catch(const char *e)
+        catch(...)
         {
-            std::cerr << e << std::endl;
+            std::cerr << "sir tqwed" << std::endl;
         }
     }
     catch(const std::exception &e)

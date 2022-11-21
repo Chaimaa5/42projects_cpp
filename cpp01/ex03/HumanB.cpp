@@ -23,8 +23,7 @@ void    HumanB::attack()
         std::cout << name << " Do not have a Weapon to attack" << std::endl;
 }
 
-
 void    HumanB::setWeapon(Weapon &weapon)
 {
-        this->weapon = &weapon;
+    this->weapon = &weapon;
 }

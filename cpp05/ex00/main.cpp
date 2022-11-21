@@ -6,7 +6,7 @@
 /*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 20:24:10 by cel-mhan          #+#    #+#             */
-/*   Updated: 2022/11/16 20:24:10 by cel-mhan         ###   ########.fr       */
+/*   Updated: 2022/11/17 19:53:13 by cel-mhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,12 @@
 int main()
 {
     try{
-        Bureaucrat B("birbir", 1);
+        Bureaucrat B("birbir", 5);
+        B.decrement();
         std::cout << B << std::endl;
-        B.decrement();
-        B.increment();
         B.increment();
         B.decrement();
-        // std::cout << B << std::endl;
+        std::cout << B << std::endl;
     }
     catch(const std::exception &e)
     {

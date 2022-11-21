@@ -1,4 +1,5 @@
 #include "Convert.hpp"
+#include <typeinfo>
 
 int main(int ac, char **av)
 {
@@ -7,9 +8,9 @@ int main(int ac, char **av)
         std::cout.precision(1);
 		std::cout << std::fixed;
         std::string ar = av[1];
-        ConvertToChar(ar);
-        ConvertToInt(ar);
-        ConvertToFloat(ar);
-        ConvertToDouble(ar);
+        // ConvertToChar(ar);
+        // ConvertToInt(ar);
+        // ConvertToFloat(ar);
+        // ConvertToDouble(ar);
     }
 }
