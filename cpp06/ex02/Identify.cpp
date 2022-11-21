@@ -5,6 +5,21 @@ Base::~Base()
     std::cout << "Base deleted\n";
 }
 
+C::~C()
+{
+    std::cout << "C deleted\n";
+}
+
+A::~A()
+{
+    std::cout << "A deleted\n";
+}
+
+B::~B()
+{
+    std::cout << "B deleted\n";
+}
+
 Base* generate(void){
     Base* ptr;
 

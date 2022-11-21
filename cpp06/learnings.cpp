@@ -9,8 +9,8 @@ int *ptr = static_cast<int>(&c);
 
 dynamic_cast:
 
-In major implementations, dynamic_cast works by comparing the vfptr - virtual function table pointer - of two classes.
-That's one way to determine whether classes are related at run-time.
+In major implementations, dynamic_cast works by comparing the vfptr - virtual function table pointer - 
+of two classes. That's one way to determine whether classes are related at run-time.
 
 When performing a dynamic_cast there is a type check performed 
 at a runtime and std::bad_cast exception is thrown 
