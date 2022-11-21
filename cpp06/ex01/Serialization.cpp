@@ -2,12 +2,10 @@
 
 uintptr_t serialize(Data* ptr)
 {
-    uintptr_t uptr = reinterpret_cast<uintptr_t>(&ptr);
-    return (uptr);
+    return (reinterpret_cast<uintptr_t>(ptr));
 }
 
 Data* deserialize(uintptr_t raw)
 {
-    Data* ptr = reinterpret_cast<Data *>(&raw);
-    return (ptr);
+    return (reinterpret_cast<Data *>(raw));
 }
