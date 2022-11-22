@@ -6,7 +6,7 @@
 /*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 23:24:45 by cel-mhan          #+#    #+#             */
-/*   Updated: 2022/11/22 16:58:09 by cel-mhan         ###   ########.fr       */
+/*   Updated: 2022/11/22 17:25:27 by cel-mhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,9 @@ int main()
     int i[6] = {1, 2, 6, 8, 9, 0};
     ::iter(i, 6, ::Lower);
     float f[6] = {1.5, 2.6, 6.6, 8, 9, 0};
-    ::iter(f, 6.0f, ::Lower);
+    ::iter(f, 6, ::Lower);
     double d[6] = {1.5, 2.6, 6.6, 8, 9, 0};
-    std::cout <<"before\n";
-    ::iter(d, 4.0, ::Print);
-    ::iter(d, 2.4, ::Lower);
-    std::cout <<"After\n";
-    ::iter(d, 4.0, ::Print);
-    std::cout <<  "i = " << i[4] << std::endl;
-    std::cout <<  "f = " << f[1] << std::endl;
-    std::cout <<  "d = " << d[3] << std::endl;
-    std::cout <<  "c = " << c[1] << std::endl;
+    ::iter(d, 4, ::Print);
+    ::iter(d, 4, ::Lower);
     return (0);
 }
-

@@ -6,7 +6,7 @@
 /*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 23:24:43 by cel-mhan          #+#    #+#             */
-/*   Updated: 2022/11/22 16:54:36 by cel-mhan         ###   ########.fr       */
+/*   Updated: 2022/11/22 17:17:51 by cel-mhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,20 @@
 
 #include <iostream>
 
-template <typename F> void Lower(F c)
+template <typename F> void Lower(F const &c)
 {
     if (c < 32)
-        c = c + 32;
+        std::cout << c + 32 << std::endl;
     else
-        c = c - 32;
+        std::cout << c - 32 << std::endl;
 } 
 
-template <typename R> void Print(R &c)
+template <typename R> void Print(R const &c)
 {
     std::cout << c << std::endl;
 } 
 
-template <typename T> void iter(T *addr, T len, void(*F)(T  &c))
+template <typename T> void iter(T *addr, int len, void(*F)(T  const &c))
 {
     for(int i = 0; i < len; i++)
         F(addr[i]);
