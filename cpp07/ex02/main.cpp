@@ -1,11 +1,61 @@
-#include <iostream>
-#include <Array.hpp>
+#include "Array.hpp"
 
-#define MAX_VAL 750
-int main(int, char**)
+template <typename T> Array<T>::Array(){
+    std::cout << "Array Constructed\n";
+}
+
+template <typename T> Array<T>::~Array(){
+    std::cout << "Array Destructed\n";
+}
+
+template <typename T> Array<T>::Array(Array const & A){
+    std::cout << "Array Copied\n";
+    *this = A;
+}
+
+template <typename T> Array<T> & Array<T>::operator=(Array const & A){
+    std::cout << "Array Copied\n";
+    this->arr_size = A.arr_size;
+    this->arr = A.arr;
+    return (*this);
+}
+
+template <typename T> Array<T>::Array(int n){
+    arr_size = n;
+    arr = new T[n];
+}
+
+template <typename T> Array<T>::Array(T tab[], int n){
+    arr_size = n;
+    arr = new T[n];
+    for (int i = 0; i < n; i++)
+        arr[i] = tab[i];
+}
+
+template <typename T> int Array<T>::size()
+{
+    return (arr_size);
+}
+
+template <typename T> int& Array<T>::operator[](int n){
+    try{
+
+        if (n < 0 || n > arr_size)
+            throw (std::exception());
+        return (arr[n]);
+    }
+    catch(const std::exception &e){
+        std::cout << "Array index out of Bound.\n";
+    }
+    return (arr[0]);
+}
+int main()
 {
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
+
+    std::cout << numbers.size() << std::endl;
+
     srand(time(NULL));
     for (int i = 0; i < MAX_VAL; i++)
     {
