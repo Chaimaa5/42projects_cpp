@@ -1,5 +1,10 @@
 #include "Array.hpp"
 
+
+const char * IndexOutOfBound::what() const throw(){
+    return ("Index out of bound.");
+}
+
 template <typename T> Array<T>::Array(){
     std::cout << "Array Constructed\n";
 }
@@ -38,16 +43,10 @@ template <typename T> int Array<T>::size()
 }
 
 template <typename T> int& Array<T>::operator[](int n){
-    try{
 
-        if (n < 0 || n > arr_size)
-            throw (std::exception());
-        return (arr[n]);
-    }
-    catch(const std::exception &e){
-        std::cout << "Array index out of Bound.\n";
-    }
-    return (arr[0]);
+    if (n < 0 || n > arr_size)
+        throw (IndexOutOfBound());
+    return (arr[n]);
 }
 int main()
 {
@@ -83,7 +82,7 @@ int main()
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << "-2 " << e.what() << '\n';
     }
     try
     {
@@ -91,7 +90,7 @@ int main()
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr <<  e.what() << '\n';
     }
 
     for (int i = 0; i < MAX_VAL; i++)

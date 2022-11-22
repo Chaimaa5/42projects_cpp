@@ -17,3 +17,8 @@ template<typename T> class Array{
         int size();
         int& operator[](int);
 };
+
+class IndexOutOfBound: public std::exception{
+    public:
+        const char * what() const throw();
+};
