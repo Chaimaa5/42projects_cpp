@@ -6,7 +6,7 @@
 /*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 20:24:43 by cel-mhan          #+#    #+#             */
-/*   Updated: 2022/11/16 20:24:43 by cel-mhan         ###   ########.fr       */
+/*   Updated: 2022/11/24 15:34:03 by cel-mhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,15 +61,15 @@ const std::string Form::getName() const{
     return (Name);
 }
 
-int Form::getSign(){
+int Form::getSign() const{
     return (sign);
 }
 
-int Form::getSGrade(){
+int Form::getSGrade() const{
     return (s_Grade);
 }
 
- int Form::getEGrade(){
+ int Form::getEGrade() const{
     return (e_Grade);
 }
 

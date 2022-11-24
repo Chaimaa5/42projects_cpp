@@ -15,9 +15,13 @@ template<typename T> class Array{
         Array(Array<T> const &);
         Array& operator=(Array<T> const &);
         int size() const;
+<<<<<<< HEAD
         void setArr(T r);
         T const & getArr();
         T& operator[](int) const;
+=======
+        T& operator[](int);
+>>>>>>> 55a4f7f48234df2a22d73aeaa8094a8bf5efd3fa
 };
 
 class IndexOutOfBound: public std::exception{
@@ -67,7 +71,11 @@ template <typename T> int Array<T>::size() const
     return (arr_size);
 }
 
+<<<<<<< HEAD
 template <typename T> T& Array<T>::operator[](int n) const{
+=======
+template <typename T> T& Array<T>::operator[](int n){
+>>>>>>> 55a4f7f48234df2a22d73aeaa8094a8bf5efd3fa
 
     if (n < 0 || n > arr_size)
         throw (IndexOutOfBound());

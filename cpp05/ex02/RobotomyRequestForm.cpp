@@ -6,7 +6,7 @@
 /*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 20:25:02 by cel-mhan          #+#    #+#             */
-/*   Updated: 2022/11/16 20:28:32 by cel-mhan         ###   ########.fr       */
+/*   Updated: 2022/11/24 15:32:48 by cel-mhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void RobotomyRequestForm::ExecuteNoise() const{
 }
 
 void    RobotomyRequestForm::Execute(Bureaucrat const & executor) const{
-    if (executor.getGrade() <= e_Grade && sign == 1)
+    if (executor.getGrade() <= this->getEGrade() && this->getSign() == 1)
         ExecuteNoise();
     else
         throw (GradeTooLowException());

@@ -6,7 +6,7 @@
 /*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 20:25:30 by cel-mhan          #+#    #+#             */
-/*   Updated: 2022/11/17 19:57:36 by cel-mhan         ###   ########.fr       */
+/*   Updated: 2022/11/24 15:36:25 by cel-mhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ int main()
             F3->beSigned(BR);
             F3->Execute(BR);
         }
-        catch(...)
+        catch(const char *e)
         {
-            std::cerr << "sir tqwed" << std::endl;
+            std::cerr << e << std::endl;
         }
     }
     catch(const std::exception &e)

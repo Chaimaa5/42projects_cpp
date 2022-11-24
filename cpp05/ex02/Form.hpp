@@ -6,7 +6,7 @@
 /*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 20:24:45 by cel-mhan          #+#    #+#             */
-/*   Updated: 2022/11/16 20:24:45 by cel-mhan         ###   ########.fr       */
+/*   Updated: 2022/11/24 15:33:47 by cel-mhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "Bureaucrat.hpp"
 
 class Form{
-    protected:
+    private:
         const       std::string Name;
         bool        sign;
         const int   s_Grade;
@@ -31,9 +31,9 @@ class Form{
         Form & operator=(Form const & F);
     //Accessors
         const std::string getName() const;
-        int     getSign();
-        int     getSGrade();
-        int     getEGrade();
+        int     getSign() const;
+        int     getSGrade() const;
+        int     getEGrade() const;
         bool    beSigned(Bureaucrat &);
     //Methods
         virtual void Execute(Bureaucrat const & executor) const = 0;

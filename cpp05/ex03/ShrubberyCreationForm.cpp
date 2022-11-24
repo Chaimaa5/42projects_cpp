@@ -6,7 +6,7 @@
 /*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 20:25:50 by cel-mhan          #+#    #+#             */
-/*   Updated: 2022/11/16 20:30:57 by cel-mhan         ###   ########.fr       */
+/*   Updated: 2022/11/24 15:35:30 by cel-mhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void ShrubberyCreationForm::ExecuteCreation() const
 }
 
 void    ShrubberyCreationForm::Execute(Bureaucrat const & executor) const{
-    if (executor.getGrade() <= e_Grade && sign == 1)
+    if (executor.getGrade() <= this->getEGrade() && this->getSign() == 1)
         ExecuteCreation();
     else
         throw (GradeTooLowException());

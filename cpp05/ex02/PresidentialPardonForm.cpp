@@ -6,7 +6,7 @@
 /*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 20:24:57 by cel-mhan          #+#    #+#             */
-/*   Updated: 2022/11/16 20:24:58 by cel-mhan         ###   ########.fr       */
+/*   Updated: 2022/11/24 15:32:34 by cel-mhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void PresidentialPardonForm::ExecutePardon() const{
 }
 
 void    PresidentialPardonForm::Execute(Bureaucrat const & executor) const{
-    if (executor.getGrade() <= e_Grade && sign == 1)
+    if (executor.getGrade() <= this->getEGrade() && this->getSign() == 1)
         ExecutePardon();
     else
         throw (GradeTooLowException());
