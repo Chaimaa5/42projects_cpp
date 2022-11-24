@@ -58,3 +58,31 @@ int main()
     delete [] mirror;//
     return 0;
 }
+
+
+
+// int main()
+// {
+//     Array<std::string> tab(MAX_VAL);
+
+//     std::cout << tab.size() << std::endl;
+
+//     tab.setArr("This is my Array Template");
+//     try
+//     {
+//         tab[-2] = "Not Working";
+//     }
+//     catch(const std::exception& e)
+//     {
+//         std::cerr << "-2 " << e.what() << '\n';
+//     }
+//     try
+//     {
+//         tab[MAX_VAL] = "Not working";
+//     }
+//     catch(const std::exception& e)
+//     {
+//         std::cerr <<  e.what() << '\n';
+//     }
+//     return 0;
+// }
