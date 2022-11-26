@@ -15,4 +15,5 @@ class Span{
 		void addNumber(int N);
 		int shortestSpan();
 		int longestSpan();
+		// range of iterators
 };
