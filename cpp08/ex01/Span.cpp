@@ -56,3 +56,20 @@ int Span::longestSpan(){
 	return (0);
 		
 }
+
+
+void Span::addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end){
+	std::vector<int> add(begin, end);
+
+	if (add.size() + vec.size() < N){
+		vec.insert(vec.end(), add.begin(), add.end());
+	}
+	else
+		throw("Range bigger than N");
+}
+
+void printVector(std::vector<int> v){
+	for (std::vector<int>::iterator i = v.begin(); i < v.end(); i++)
+		std::cout << *i << std::endl;
+	
+}

@@ -15,5 +15,6 @@ class Span{
 		void addNumber(int N);
 		int shortestSpan();
 		int longestSpan();
-		// range of iterators
+		void addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 };
+void printVector(std::vector<int> v);
