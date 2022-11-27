@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/27 15:27:39 by cel-mhan          #+#    #+#             */
+/*   Updated: 2022/11/27 15:37:58 by cel-mhan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "MutantStack.hpp"
 
 int main()
@@ -10,9 +22,8 @@ int main()
 	mstack.push(3);
 	mstack.push(5);
 	mstack.push(737);
-	//[...]
 	mstack.push(0);
-
+	mstack.printStack();
 
 	MutantStack<int>::reverse_iterator rev = mstack.rbegin();
 	MutantStack<int>::reverse_iterator reve = mstack.rend();
@@ -50,5 +61,6 @@ int main()
 	}
 	std::stack<int> s(mstack);
 	
+	test.printStack();
 	return 0;
 }
