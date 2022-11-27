@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/27 15:27:29 by cel-mhan          #+#    #+#             */
+/*   Updated: 2022/11/27 15:27:32 by cel-mhan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #pragma once
 #include <iostream>
 #include <vector>
@@ -18,4 +30,5 @@ class Span{
 		void addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 		std::vector<int> getVector();
 };
+
 void printVector(std::vector<int> v);
