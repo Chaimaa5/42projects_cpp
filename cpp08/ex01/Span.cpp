@@ -76,3 +76,5 @@ void printVector(std::vector<int> v){
 std::vector<int> Span::getVector(){
 	return (vec);
 }
+
+std::max_element
