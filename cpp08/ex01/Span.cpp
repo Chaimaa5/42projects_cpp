@@ -31,10 +31,8 @@ int Span::shortestSpan(){
 	{
 		for (size_t i = 0; i < container.size() - 1; i++)
 		{
-			std::cout << container[i + 1] << "---" << container[i]<< std::endl;
 			if (ShortSpan > container[i] - container[i + 1])
 				ShortSpan = container[i] - container[i + 1];
-			std::cout << ShortSpan << std::endl;
 		}
 		return (ShortSpan);
 	}
@@ -69,7 +67,12 @@ void Span::addRange(std::vector<int>::iterator begin, std::vector<int>::iterator
 }
 
 void printVector(std::vector<int> v){
+	std::cout << "Printing Vector: ";
 	for (std::vector<int>::iterator i = v.begin(); i < v.end(); i++)
-		std::cout << *i << std::endl;
-	
+		std::cout << *i << ", ";
+	std::cout << std::endl;
+}
+
+std::vector<int> Span::getVector(){
+	return (vec);
 }
