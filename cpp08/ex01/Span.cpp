@@ -42,26 +42,20 @@ int Span::shortestSpan(){
 }
 
 int Span::longestSpan(){
-	std::vector<int> sorted = vec;
-	std::sort(sorted.begin(), sorted.end());
-	if (sorted.size() > 1)
+	if (vec.size() > 1)
 	{
-		int LongSpan = sorted[sorted.size() - 1] -  sorted[0];
+		int LongSpan = *std::max_element(vec.begin(), vec.end()) -  *std::min_element(vec.begin(), vec.end());
 		return (LongSpan);
 	}
 	else
 		throw("No longest Span");
 	return (0);
-		
 }
 
-
 void Span::addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end){
-	std::vector<int> add(begin, end);
 
-	if (add.size() + vec.size() < N){
-		vec.insert(vec.end(), add.begin(), add.end());
-	}
+	if (std::distance(begin, end) + vec.size() < N)
+		vec.insert(vec.end(), begin, end);
 	else
 		throw("Range bigger than N");
 }
@@ -77,4 +71,4 @@ std::vector<int> Span::getVector(){
 	return (vec);
 }
 
-std::max_element
+// std::max_element
