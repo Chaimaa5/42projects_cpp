@@ -6,7 +6,7 @@
 /*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 15:27:29 by cel-mhan          #+#    #+#             */
-/*   Updated: 2022/11/27 15:27:32 by cel-mhan         ###   ########.fr       */
+/*   Updated: 2022/11/27 18:07:34 by cel-mhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@ class Span{
 		unsigned int N;
 		std::vector<int> vec;
 	public:
+	//Canonical Form
 		Span();
 		Span(unsigned int N);
 		~Span();
 		Span(Span const &);
 		Span &operator=(Span const &);
+	//Methods
 		void addNumber(int N);
 		int shortestSpan();
 		int longestSpan();

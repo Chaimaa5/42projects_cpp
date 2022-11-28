@@ -6,7 +6,7 @@
 /*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 15:27:45 by cel-mhan          #+#    #+#             */
-/*   Updated: 2022/11/27 15:47:54 by cel-mhan         ###   ########.fr       */
+/*   Updated: 2022/11/27 20:50:34 by cel-mhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <stack>
 #include <iterator>
 #include <algorithm>
-
 template <typename T>
 class MutantStack : public std::stack<T>
 {
