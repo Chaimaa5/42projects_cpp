@@ -22,6 +22,7 @@ class BitcoinExchange{
 		void SetError(std::string);
 
 
+		double GetExchangeRate();
 		double GetValue();
 		std::tm GetDate();
 		std::string GetError();
