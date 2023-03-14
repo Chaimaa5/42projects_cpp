@@ -13,20 +13,18 @@ void input_parser(std::string input, std::vector<BitcoinExchange> data){
 			{
 				BitcoinExchange bitcoin;
 				bitcoin.SetDate(line.substr(0, sep));
-				bitcoin.SetValue(atof((line.substr(sep + 1, std::string::npos)).c_str()));
+				std::string value = (line.substr(sep + 1, std::string::npos)).c_str();
+				if (value.length() >= 10)
+					bitcoin.SetError("Error: too large a number.\n");
+				else if (!value.find('-'))
+					bitcoin.SetError("Error: not a positive number.\n");
+				else
+					bitcoin.SetValue(atof((line.substr(sep + 1, std::string::npos)).c_str()));
 				bitcoin.SetExchangeRate(data);
 				B.push_back(bitcoin);
 			}
-			// else{
-			// 	BitcoinExchange bitcoin;
-			// 	bitcoin.SetDate(line.substr(0, sep));
-			// 	bitcoin.SetValue();
-			// 	B.push_back(bitcoin);
-			// }
 		}
 	}
-	// for (size_t i = 0; i != B.size(); i++)
-		// std::cout << B[i].GetDate() << " " << B[i].GetValue() << std::endl;
 }
 
 std::vector<BitcoinExchange> database_parser(){
@@ -49,8 +47,6 @@ std::vector<BitcoinExchange> database_parser(){
 		}
 	}
 	return B;
-	// for (size_t i = 0; i != B.size(); i++)
-		// std::cout << B[i].GetDate() << " " << B[i].GetValue() << std::endl;
 }
 
 int main(int ar, char **av){

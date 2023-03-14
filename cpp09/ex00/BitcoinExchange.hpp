@@ -8,6 +8,7 @@ class BitcoinExchange{
 		double Value;
 		double ExchangeRate;
 		std::tm Date;
+		std::string Error;
 	public:
 		BitcoinExchange();
 		~BitcoinExchange();
@@ -18,10 +19,12 @@ class BitcoinExchange{
 		void SetValue(double);
 		void SetDate(std::string);
 		void SetExchangeRate(std::vector<BitcoinExchange> B);
+		void SetError(std::string);
+
 
 		double GetValue();
 		std::tm GetDate();
-
+		std::string GetError();
 		bool isBetween(std::tm date, std::tm start, std::tm end);
 
 };
