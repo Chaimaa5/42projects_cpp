@@ -27,7 +27,9 @@ void BitcoinExchange::SetDate(std::string date){
 	int month = atoi((date.substr(save + 1,sep )).c_str());
 	int day = atoi((date.substr(sep + 1, std::string::npos )).c_str());
 	if (day < 0 || day > 31 || month < 0 || month > 12)
+	{
 		SetError("Error: bad input");
+	}
 	Date.tm_isdst = 0;
     Date.tm_year = year - 1900; // years since 1900
     Date.tm_mon = month - 1; // months since January (0-11)

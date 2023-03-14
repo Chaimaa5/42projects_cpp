@@ -9,9 +9,9 @@ std::vector<BitcoinExchange> input_parser(std::string input, std::vector<Bitcoin
 		while (getline(ifs, line)){
 			line.erase(remove_if(line.begin(), line.end(), isspace), line.end());
 			sep = line.find('|');
+			BitcoinExchange bitcoin;
 			if (sep == 10)
 			{
-				BitcoinExchange bitcoin;
 				bitcoin.SetDate(line.substr(0, sep));
 				std::string value = (line.substr(sep + 1, std::string::npos)).c_str();
 				if (value.length() >= 10)
@@ -21,6 +21,12 @@ std::vector<BitcoinExchange> input_parser(std::string input, std::vector<Bitcoin
 				else
 					bitcoin.SetValue(atof((line.substr(sep + 1, std::string::npos)).c_str()));
 				bitcoin.SetExchangeRate(data);
+				B.push_back(bitcoin);
+			}
+			else{
+				std::string error = "Error: bad input => ";
+				error.append(line);
+				bitcoin.SetError(error);
 				B.push_back(bitcoin);
 			}
 		}
@@ -72,6 +78,11 @@ int main(int ar, char **av){
 		std::string file = av[1];
 		std::vector<BitcoinExchange> B = database_parser();
 		std::vector<BitcoinExchange> output = input_parser(file, B);
-		Output(output);
+		if (!output.empty())
+			Output(output);
+		else
+			std::cout << "Error: File is corrupted.\n";
 	}
+	else 
+		std::cout << "Error: could not open file.\n";
 }
