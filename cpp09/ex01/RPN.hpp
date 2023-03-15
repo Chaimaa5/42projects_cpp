@@ -9,6 +9,6 @@ class RPN{
 		RPN(const RPN &);
 		RPN &operator=(const RPN &);
 
-		void RPN_Parser(std::string input);
-		void RPN_Calculator();
+		int RPN_Parser(std::string input);
+		int RPN_Calculator(int x, int y, char op);
 };
