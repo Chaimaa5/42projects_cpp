@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
+/*   draft.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 20:28:00 by cel-mhan          #+#    #+#             */
-/*   Updated: 2023/03/15 20:28:00 by cel-mhan         ###   ########.fr       */
+/*   Created: 2023/03/15 20:28:06 by cel-mhan          #+#    #+#             */
+/*   Updated: 2023/03/15 20:28:06 by cel-mhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,14 @@ BitcoinExchange & BitcoinExchange::operator=(const BitcoinExchange & B){
 }
 
 
-void BitcoinExchange::SetValue(double value){this->Value = value;}
+void BitcoinExchange::SetValue(double value){
+	if (value > 0 && value < 1000)
+		this->Value = value;
+	if (value >= 1000)
+		SetError("Error: too large a number.");
+	else if (value < 0)
+		SetError("Error: not a positive number.");
+}
 void BitcoinExchange::SetError(std::string error){ this->Error = error;}
 void BitcoinExchange::SetDate(std::string date){
 	size_t sep = date.find('-');
@@ -62,15 +69,8 @@ void BitcoinExchange::SetExchangeRate(std::vector<BitcoinExchange> B){
 		std::tm time2 = B[i + 1].GetDate();
 		if (!std::difftime(std::mktime(&Date), std::mktime(&time1)) || isBetween(Date, time1, time2))
 		{
-			if(Error.empty()) {
-				if (Value < 0)
-					SetError("Error: not a positive number.");
-				else if (Value >= 1000)
-					SetError("Error: too large number.");
-				else {
-					ExchangeRate = B[i].GetValue() * Value;
-				}
-			}
+			if(Error.empty()) 
+				ExchangeRate = Value * B[i].GetValue();
 		}
 	}
 }

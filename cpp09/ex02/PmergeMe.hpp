@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RPN.hpp                                            :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 20:28:23 by cel-mhan          #+#    #+#             */
-/*   Updated: 2023/03/15 20:28:23 by cel-mhan         ###   ########.fr       */
+/*   Created: 2023/03/15 20:28:33 by cel-mhan          #+#    #+#             */
+/*   Updated: 2023/03/15 20:37:43 by cel-mhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <stack>
-class RPN{
-	private:
-		std::stack<int> stack;
-	public:
-		RPN();
-		~RPN();
-		RPN(const RPN &);
-		RPN &operator=(const RPN &);
+#pragma once
 
-		int RPN_Parser(std::string input);
-		int RPN_Calculator(int x, int y, char op);
+#include <iostream>
+#include <iterator>
+#include <list>
+#include <deque>
+
+class PmergeMe{
+	private:
+		std::list<int>	list;
+		std::deque<int>	deque;
+	public:
+	PmergeMe();
+	~PmergeMe();
+	PmergeMe(const PmergeMe &);
+	PmergeMe & operator=(const PmergeMe &);
+	void Parser(int ar, char **av);
+	std::list<int>	GetList();
+	std::deque<int>	GetDeque();
 };
+
+std::list<int>  PmergeList(std::list<int>);
+void PmergeDeque();
