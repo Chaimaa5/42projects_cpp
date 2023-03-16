@@ -6,7 +6,7 @@
 /*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 20:28:03 by cel-mhan          #+#    #+#             */
-/*   Updated: 2023/03/15 20:28:03 by cel-mhan         ###   ########.fr       */
+/*   Updated: 2023/03/16 18:14:42 by cel-mhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 #include <ctime>
 class BitcoinExchange{
 	private:
-		double Value;
-		double ExchangeRate;
+		float Value;
+		float ExchangeRate;
 		std::tm Date;
 		std::string Error;
 	public:
@@ -28,14 +28,14 @@ class BitcoinExchange{
 		BitcoinExchange & operator=(const BitcoinExchange & B);
 		// void parser(std::string input);
 		
-		void SetValue(double);
+		void SetValue(std::string);
 		void SetDate(std::string);
 		void SetExchangeRate(std::vector<BitcoinExchange> B);
 		void SetError(std::string);
 
 
-		double GetExchangeRate();
-		double GetValue();
+		float GetExchangeRate();
+		float GetValue();
 		std::tm GetDate();
 		std::string GetError();
 		bool isBetween(std::tm date, std::tm start, std::tm end);

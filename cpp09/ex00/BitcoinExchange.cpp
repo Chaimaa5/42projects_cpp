@@ -6,7 +6,7 @@
 /*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 20:28:00 by cel-mhan          #+#    #+#             */
-/*   Updated: 2023/03/15 20:28:00 by cel-mhan         ###   ########.fr       */
+/*   Updated: 2023/03/16 18:13:44 by cel-mhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,15 @@ BitcoinExchange & BitcoinExchange::operator=(const BitcoinExchange & B){
 }
 
 
-void BitcoinExchange::SetValue(double value){this->Value = value;}
+void BitcoinExchange::SetValue(std::string value){
+	char *endptr;
+	float x = strtod(value.c_str(), &endptr);
+	if (*endptr != '\0')
+		SetError("Error: string with invalid characters");
+	else
+		this->Value = x;
+	
+}
 void BitcoinExchange::SetError(std::string error){ this->Error = error;}
 void BitcoinExchange::SetDate(std::string date){
 	size_t sep = date.find('-');
@@ -48,8 +56,8 @@ void BitcoinExchange::SetDate(std::string date){
     std::mktime(&Date); // normalize the structure
 }
 
-double BitcoinExchange::GetValue(){return Value;}
-double BitcoinExchange::GetExchangeRate(){return ExchangeRate;}
+float BitcoinExchange::GetValue(){return Value;}
+float BitcoinExchange::GetExchangeRate(){return ExchangeRate;}
 std::tm BitcoinExchange::GetDate(){return Date;}
 std::string BitcoinExchange::GetError(){return Error;}
 bool BitcoinExchange::isBetween(std::tm date, std::tm start, std::tm end) {

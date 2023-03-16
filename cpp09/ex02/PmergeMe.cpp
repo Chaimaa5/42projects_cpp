@@ -6,7 +6,7 @@
 /*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 20:27:55 by cel-mhan          #+#    #+#             */
-/*   Updated: 2023/03/16 12:52:15 by cel-mhan         ###   ########.fr       */
+/*   Updated: 2023/03/16 15:13:05 by cel-mhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ PmergeMe::~PmergeMe(){}
 PmergeMe::PmergeMe(const PmergeMe & P){
 	*this = P;
 }
+
 PmergeMe & PmergeMe::operator=(const PmergeMe & P){
 	this->list = P.list;
 	this->deque = P.deque;
