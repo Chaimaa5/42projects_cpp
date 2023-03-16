@@ -6,7 +6,7 @@
 /*   By: cel-mhan <cel-mhan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 20:27:55 by cel-mhan          #+#    #+#             */
-/*   Updated: 2023/03/15 21:06:42 by cel-mhan         ###   ########.fr       */
+/*   Updated: 2023/03/16 12:52:15 by cel-mhan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ bool is_digit(std::string n)
 	}
 	return (1);
 }
+
 void PmergeMe::Parser(int ar, char **av){
 	for (int i = 1; i < ar; i++)
 	{
@@ -52,11 +53,14 @@ void PmergeMe::Parser(int ar, char **av){
 
 std::list<int>	 PmergeMe::GetList(){return list;}
 std::deque<int>	 PmergeMe::GetDeque(){return deque;}
-std::list<int> PmergeList(std::list<int> list){
+void PmergeList(std::list<int> & list){
 	std::list<int> right;
 	std::list<int> left;
 	if (list.size() < 10)
+	{
 		list.sort();
+		return ;
+	}
 	else{
 		size_t i = 0;
 		for (std::list<int>::iterator it = list.begin(); it != list.end(); it++)
@@ -67,9 +71,9 @@ std::list<int> PmergeList(std::list<int> list){
 				left.push_back(*it);
 			i++;
 		}
-		PmergeList(right);
-		PmergeList(left);
 	}
+	PmergeList(right);
+	PmergeList(left);
 	list.clear();
 	while(!right.empty() && !left.empty())
 	{
@@ -82,16 +86,40 @@ std::list<int> PmergeList(std::list<int> list){
 			list.push_back(left.front());
 			left.pop_front();
 		}
-		for (std::list<int>::iterator i = right.begin(); i != right.end(); i++)
-			std::cout << *i << std::endl;
-		std::cout << "---------------------------------\n" ;
 	}
-	list.splice(list.end(),  right);
-	list.splice(list.end(), left);
-	return list;
-	
 }
-void PmergeDeque(std::deque<int> deque){
-	for (std::deque<int>::iterator i = deque.begin(); i != deque.end(); i++)
-		std::cout << *i << std::endl;
+void PmergeDeque(std::deque<int>& deque){
+		std::deque<int> right;
+	std::deque<int> left;
+	if (deque.size() < 10)
+	{
+		sort(deque.begin(), deque.end());
+		return ;
+	}
+	else{
+		size_t i = 0;
+		for (std::deque<int>::iterator it = deque.begin(); it != deque.end(); it++)
+		{
+			if (i < (deque.size() / 2))
+				right.push_back(*it);
+			else
+				left.push_back(*it);
+			i++;
+		}
+	}
+	PmergeDeque(right);
+	PmergeDeque(left);
+	deque.clear();
+	while(!right.empty() && !left.empty())
+	{
+		if (right.front() <= left.front())
+		{
+			deque.push_back(right.front());
+			right.pop_front();
+		}
+		else{
+			deque.push_back(left.front());
+			left.pop_front();
+		}
+	}
 }
